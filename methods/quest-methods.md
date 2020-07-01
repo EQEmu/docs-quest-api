@@ -76,6 +76,10 @@ quest::crosszonemessageplayerbyname(int channel_id, string name, string message)
 quest::crosszonemessageplayerbygroupid(int type, int group_id, string message)
 quest::crosszonemessageplayerbyraidid(int type, int raid_id, string message)
 quest::crosszonemessageplayerbyguildid(int type, int guild_id, string message)
+quest::crosszonemoveplayerbycharid(int character_id, const char *zone_short_name)
+quest::crosszonemoveplayerbygroupid(int group_id, const char *zone_short_name)
+quest::crosszonemoveplayerbyraidid(int raid_id, const char *zone_short_name)
+quest::crosszonemoveplayerbyguildid(int guild_id, const char *zone_short_name)
 quest::crosszonesetentityvariablebyclientname(string client_name, string key, string value)
 quest::crosszonesetentityvariablebygroupid(int group_id, ing client_name, string key, string value)
 quest::crosszonesetentityvariablebyraidid(int raid_id, string key, string value)
@@ -298,6 +302,10 @@ eq.cross_zone_message_player_by_name(uint32 type, const char *player, const char
 eq.cross_zone_message_player_by_group_id(uint32 type, int group_id, const char *message); -- void
 eq.cross_zone_message_player_by_raid_id(uint32 type, int raid_id *player, const char *message); -- void
 eq.cross_zone_message_player_by_guild_id(uint32 type, int guild_id, const char *message); -- void
+eq.cross_zone_move_player_by_char_id(int character_id, const char *zone_short_name); -- void
+eq.cross_zone_move_player_by_group_id(int group_id, const char *zone_short_name); -- void
+eq.cross_zone_move_player_by_raid_id(int raid_id, const char *zone_short_name); -- void
+eq.cross_zone_move_player_by_guild_id(int guild_id, const char *zone_short_name); -- void
 eq.cross_zone_set_entity_variable_by_client_name(const char *player, const char *id, const char *m_var); -- void
 eq.cross_zone_set_entity_variable_by_group_id(int group_id, const char *id, const char *m_var); -- void
 eq.cross_zone_set_entity_variable_by_raid_id(int raid_id, const char *id, const char *m_var); -- void

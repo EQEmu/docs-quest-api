@@ -36,6 +36,7 @@ $client->DeleteItemInInventory(int16 slot_id, [int8 quantity = 0], [bool client_
 $client->Disconnect()
 $client->DropItem(int16 slot_id)
 $client->Duck()
+$client->DyeArmorBySlot(uint8 slot, uint8 red, uint8 green, uint8 blue, [uint8 use_tint = 0x00])
 $client->Escape()
 $client->ExpeditionMessage(int expedition_id, string message)
 $client->FailTask(int task_id)
@@ -78,6 +79,7 @@ $client->GetCorpseItemAt(uint32 corpse_id, uint16 slot_id)
 $client->GetCustomItemData(int16 slot_id, string identifier)
 $client->GetDisciplineTimer(uint32 timer_id)
 $client->GetDiscSlotBySpellID(int32 spell_id)
+$client->GetDisplayAC()
 $client->GetDuelTarget()
 $client->GetEXP()
 $client->GetEbonCrystals()
@@ -166,6 +168,9 @@ $client->MovePCInstance(uint32 zone_id, uint32 instance_id, float X, float Y, fl
 $client->MoveZone(const char *zone_short_name)
 $client->MoveZoneGroup(const char *zone_short_name)
 $client->MoveZoneRaid(const char *zone_short_name)
+$client->MoveZoneInstance(uint16 instance_id)
+$client->MoveZoneInstanceGroup(uint16 instance_id)
+$client->MoveZoneInstanceRaid(uint16 instance_id)
 $client->NotifyNewTitlesAvailable()
 $client->NPCSpawn(npc*, string option, uint32 respawn_time=1200)
 $client->NukeItem(uint32 item_id, [uint8 slot_to_check])
@@ -296,6 +301,8 @@ client:DisableAreaRegens(); -- void
 client:Disconnect(); -- void
 client:DropItem(int slot_id); -- void
 client:Duck(); -- void
+client:DyeArmorBySlot(uint8 slot, uint8 red, uint8 green, uint8 blue); -- void
+client:DyeArmorBySlot(uint8 slot, uint8 red, uint8 green, uint8 blue, uint8 use_tint); -- void
 client:EnableAreaEndRegen(int value); -- void
 client:EnableAreaHPRegen(int value); -- void
 client:EnableAreaManaRegen(int value); -- void
@@ -346,6 +353,7 @@ client:GetCorpseID(int corpse); -- int
 client:GetCorpseItemAt(int corpse, int slot); -- int
 client:GetDisciplineTimer(uint32 timer_id); -- uint32
 client:GetDiscSlotBySpellID(int32 spell_id); -- int
+client:GetDisplayAC()
 client:GetDuelTarget(); -- int
 client:GetEXP(); -- uint32
 client:GetEbonCrystals(); -- uint32
@@ -431,6 +439,9 @@ client:MovePCInstance(int zone, int instance, float x, float y, float z, float h
 client:MoveZone(const char *zone_short_name); -- void
 client:MoveZoneGroup(const char *zone_short_name); -- void
 client:MoveZoneRaid(const char *zone_short_name); -- void
+client:MoveZoneInstance(uint16 instance_id); -- void
+client:MoveZoneInstanceGroup(uint16 instance_id); -- void
+client:MoveZoneInstanceRaid(uint16 instance_id); -- void
 client:NukeItem(uint32 item_num); -- void
 client:NukeItem(uint32 item_num, int where_to_check); -- void
 client:OpenLFGuildWindow(); -- void
