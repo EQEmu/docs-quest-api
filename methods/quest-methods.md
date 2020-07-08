@@ -72,24 +72,38 @@ quest::crosszoneassigntaskbycharid(int character_id, uint32 task_id, [bool enfor
 quest::crosszoneassigntaskbygroupid(int group_id, uint32 task_id, [bool enforce_level_requirement = false])
 quest::crosszoneassigntaskbyraidid(int raid_id, uint32 task_id, [bool enforce_level_requirement = false])
 quest::crosszoneassigntaskbyguildid(int guild_id, uint32 task_id, [bool enforce_level_requirement = false])
-quest::crosszonemessageplayerbyname(int channel_id, string name, string message)
-quest::crosszonemessageplayerbygroupid(int type, int group_id, string message)
-quest::crosszonemessageplayerbyraidid(int type, int raid_id, string message)
-quest::crosszonemessageplayerbyguildid(int type, int guild_id, string message)
-quest::crosszonemoveplayerbycharid(int character_id, const char *zone_short_name)
-quest::crosszonemoveplayerbygroupid(int group_id, const char *zone_short_name)
-quest::crosszonemoveplayerbyraidid(int raid_id, const char *zone_short_name)
-quest::crosszonemoveplayerbyguildid(int guild_id, const char *zone_short_name)
-quest::crosszonesetentityvariablebyclientname(string client_name, string key, string value)
-quest::crosszonesetentityvariablebygroupid(int group_id, ing client_name, string key, string value)
-quest::crosszonesetentityvariablebyraidid(int raid_id, string key, string value)
-quest::crosszonesetentityvariablebyguildid(int guild_id, string key, string value)
-quest::crosszonesetentityvariablebynpctypeid(int npc_type_id, string key, string value)
-quest::crosszonesignalclientbycharid(int character_id, int value)
-quest::crosszonesignalclientbygroupid(int group_id, int value)
-quest::crosszonesignalclientbyraidid(int raid_id, int value)
-quest::crosszonesignalclientbyguildid(int guild_id, int value)
-quest::crosszonesignalnpcbynpctypeid(uint32 npc_type_id, uint32 value)
+quest::crosszonecastspellbycharid(int character_id, uint32 spell_id)
+quest::crosszonecastspellbygroupid(int group_id, uint32 spell_id)
+quest::crosszonecastspellbyraidid(int raid_id, uint32 spell_id)
+quest::crosszonecastspellbyguildid(int guild_id, uint32 spell_id)
+quest::crosszonedisabletaskbycharid(int character_id, uint32 task_id)
+quest::crosszonedisabletaskbygroupid(int group_id, uint32 task_id)
+quest::crosszonedisabletaskbyraidid(int raid_id, uint32 task_id)
+quest::crosszonedisabletaskbyguildid(int guild_id, uint32 task_id)
+quest::crosszoneenabletaskbycharid(int character_id, uint32 task_id)
+quest::crosszoneenabletaskbygroupid(int group_id, uint32 task_id)
+quest::crosszoneenabletaskbyraidid(int raid_id, uint32 task_id)
+quest::crosszoneenabletaskbyguildid(int guild_id, uint32 task_id)
+quest::crosszonefailtaskbycharid(int character_id, uint32 task_id)
+quest::crosszonefailtaskbygroupid(int group_id, uint32 task_id)
+quest::crosszonefailtaskbyraidid(int raid_id, uint32 task_id)
+quest::crosszonefailtaskbyguildid(int guild_id, uint32 task_id)
+quest::crosszonemoveinstancebycharid(int character_id, uint16 instance_id)
+quest::crosszonemoveinstancebygroupid(int group_id, uint16 instance_id)
+quest::crosszonemoveinstancebyraidid(int raid_id, uint16 instance_id)
+quest::crosszonemoveinstancebyguildid(int guild_id, uint16 instance_id)
+quest::crosszoneremovespellbycharid(int character_id, uint32 spell_id)
+quest::crosszoneremovespellbygroupid(int group_id, uint32 spell_id)
+quest::crosszoneremovespellbyraidid(int raid_id, uint32 spell_id)
+quest::crosszoneremovespellbyguildid(int guild_id, uint32 spell_id)
+quest::crosszoneresetactivitybycharid(int character_id, uint32 task_id, int activity_id)
+quest::crosszoneresetactivitybygroupid(int group_id, uint32 task_id, int activity_id)
+quest::crosszoneresetactivitybyraidid(int raid_id, uint32 task_id, int activity_id)
+quest::crosszoneresetactivitybyguildid(int guild_id, uint32 task_id, int activity_id)
+quest::crosszoneupdateactivitybycharid(int character_id, uint32 task_id, int activity_id, int activity_count)
+quest::crosszoneupdateactivitybygroupid(int group_id, uint32 task_id, int activity_id, int activity_count)
+quest::crosszoneupdateactivitybyraidid(int raid_id, uint32 task_id, int activity_id, int activity_count)
+quest::crosszoneupdateactivitybyguildid(int guild_id, uint32 task_id, int activity_id, int activity_count)
 quest::debug(string message, [uint8 debug_level = 1 [1-3]])
 quest::delete_data(string bucket_key)
 quest::delglobal(string key)
@@ -247,7 +261,23 @@ quest::varlink(uint32 item_id)
 quest::voicetell(string client_name, int macro_id, int ace_id, int gender_id)
 quest::we(int emote_color_id, string message)
 quest::wearchange(uint8 slot, uint16 texture_id, [uint32 hero_forge_model_id = 0], [uint32 elite_material_id = 0])
-quest::worldwidemarquee(uint32 color_id, uint32 priority, uint32 fade_in, uint32 fade_out, uint32 duration, string message)
+quest::worldwideassigntask(uint32 task_id, bool enforce_level_requirement, uint8 min_status, uint8 max_status)
+quest::worldwidecastspell(uint32 spell_id, uint8 min_status, uint8 max_status)
+quest::worldwidedisabletask(uint32 task_id, uint8 min_status, uint8 max_status)
+quest::worldwideenabletask(uint32 task_id, uint8 min_status, uint8 max_status)
+quest::worldwidefailtask(uint32 task_id, uint8 min_status, uint8 max_status)
+quest::worldwidemessage(uint32 type, string message, uint8 min_status, uint8 max_status)
+quest::worldwidemarquee(uint32 color_id, uint32 priority, uint32 fade_in, uint32 fade_out, uint32 duration, string message, uint8 min_status, uint8 max_status)
+quest::worldwidemove(string zone_short_name, uint8 min_status, uint8 max_status)
+quest::worldwidemoveinstance(uint16 instance_id, uint8 min_status, uint8 max_status)
+quest::worldwideremovespell(uint32 spell_id, uint8 min_status, uint8 max_status)
+quest::worldwideremovetask(uint32 task_id, uint8 min_status, uint8 max_status)
+quest::worldwideresetactivity(uint32 task_id, int activity_id, uint8 min_status, uint8 max_status)
+quest::worldwidesetentityvariableclient(string variable_name, string variable_value, uint8 min_status, uint8 max_status)
+quest::worldwidesetentityvariablenpc(string variable_name, string variable_value)
+quest::worldwidesignalclient(uint32 signal, uint8 min_status, uint8 max_status)
+quest::worldwidesignalnpc(uint32 signal)
+quest::worldwideupdateactivity(uint32 task_id, int activity_id, int activity_count, uint8 min_status, uint8 max_status)
 quest::write(string file_name, string message)
 quest::ze(int emote_color_id, string message)
 quest::zone(string zone_name)
@@ -290,31 +320,38 @@ eq.create_ground_object_from_model(const char *model, float x, float y, float z,
 eq.create_ground_object_from_model(const char *model, float x, float y, float z, float h, int type, uint32 decay_time); -- void
 eq.create_guild(const char *name, const char *leader); -- void
 eq.create_instance(const char *zone, uint32 version, uint32 duration); -- uint32
-eq.cross_zone_assign_task_by_char_id(int character_id, uint32 task_id); -- void
-eq.cross_zone_assign_task_by_char_id(int character_id, uint32 task_id, bool enforce_level_requirement); -- void
-eq.cross_zone_assign_task_by_group_id(int group_id, uint32 task_id); -- void
-eq.cross_zone_assign_task_by_group_id(int group_id, uint32 task_id bool enforce_level_requirement); -- void
-eq.cross_zone_assign_task_by_raid_id(int raid_id, uint32 task_id); -- void
-eq.cross_zone_assign_task_by_raid_id(int raid_id, uint32 task_id bool enforce_level_requirement); -- void
-eq.cross_zone_assign_task_by_guild_id(int guild_id, uint32 task_id); -- void
-eq.cross_zone_assign_task_by_guild_id(int guild_id, uint32 task_id, bool enforce_level_requirement); -- void
-eq.cross_zone_message_player_by_name(uint32 type, const char *player, const char *message); -- void
-eq.cross_zone_message_player_by_group_id(uint32 type, int group_id, const char *message); -- void
-eq.cross_zone_message_player_by_raid_id(uint32 type, int raid_id *player, const char *message); -- void
-eq.cross_zone_message_player_by_guild_id(uint32 type, int guild_id, const char *message); -- void
-eq.cross_zone_move_player_by_char_id(int character_id, const char *zone_short_name); -- void
-eq.cross_zone_move_player_by_group_id(int group_id, const char *zone_short_name); -- void
-eq.cross_zone_move_player_by_raid_id(int raid_id, const char *zone_short_name); -- void
-eq.cross_zone_move_player_by_guild_id(int guild_id, const char *zone_short_name); -- void
-eq.cross_zone_set_entity_variable_by_client_name(const char *player, const char *id, const char *m_var); -- void
-eq.cross_zone_set_entity_variable_by_group_id(int group_id, const char *id, const char *m_var); -- void
-eq.cross_zone_set_entity_variable_by_raid_id(int raid_id, const char *id, const char *m_var); -- void
-eq.cross_zone_set_entity_variable_by_guild_id(int guild_id, const char *id, const char *m_var); -- void
-eq.cross_zone_signal_client_by_char_id(uint32 player_id, int signal); -- void
-eq.cross_zone_signal_client_by_name(const char *player, int signal); -- void
-eq.cross_zone_signal_client_by_group_id(int group_id, int signal); -- void
-eq.cross_zone_signal_client_by_raid_id(int raid_id, int signal); -- void
-eq.cross_zone_signal_client_by_guild_id(int guild_id, int signal); -- void
+eq.cross_zone_cast_spell_by_char_id(character_id, spell_id, min_status, max_status); -- void
+eq.cross_zone_cast_spell_by_group_id(group_id, spell_id, min_status, max_status); -- void
+eq.cross_zone_cast_spell_by_raid_id(raid_id, spell_id, min_status, max_status); -- void
+eq.cross_zone_cast_spell_by_guild_id(guild_id, spell_id, min_status, max_status); -- void
+eq.cross_zone_disable_task_by_char_id(character_id, task_id, min_status, max_status); -- void
+eq.cross_zone_disable_task_by_group_id(group_id, task_id, min_status, max_status); -- void
+eq.cross_zone_disable_task_by_raid_id(raid_id, task_id, min_status, max_status); -- void
+eq.cross_zone_disable_task_by_guild_id(guild_id, task_id, min_status, max_status); -- void
+eq.cross_zone_enable_task_by_char_id(character_id, task_id, min_status, max_status); -- void
+eq.cross_zone_enable_task_by_group_id(group_id, task_id, min_status, max_status); -- void
+eq.cross_zone_enable_task_by_raid_id(raid_id, task_id, min_status, max_status); -- void
+eq.cross_zone_enable_task_by_guild_id(guild_id, task_id, min_status, max_status); -- void
+eq.cross_zone_fail_task_by_char_id(character_id, task_id, min_status, max_status); -- void
+eq.cross_zone_fail_task_by_group_id(group_id, task_id, min_status, max_status); -- void
+eq.cross_zone_fail_task_by_raid_id(raid_id, task_id, min_status, max_status); -- void
+eq.cross_zone_fail_task_by_guild_id(guild_id, task_id, min_status, max_status); -- void
+eq.cross_zone_move_instance_by_char_id(character_id, instance_id, min_status, max_status); -- void
+eq.cross_zone_move_instance_by_group_id(group_id, instance_id, min_status, max_status); -- void
+eq.cross_zone_move_instance_by_raid_id(raid_id, instance_id, min_status, max_status); -- void
+eq.cross_zone_move_instance_by_guild_id(guild_id, instance_id, min_status, max_status); -- void
+eq.cross_zone_remove_spell_by_char_id(character_id, spell_id, min_status, max_status); -- void
+eq.cross_zone_remove_spell_by_group_id(group_id, spell_id, min_status, max_status); -- void
+eq.cross_zone_remove_spell_by_raid_id(raid_id, spell_id, min_status, max_status); -- void
+eq.cross_zone_remove_spell_by_guild_id(guild_id, spell_id, min_status, max_status); -- void
+eq.cross_zone_reset_activity_by_char_id(character_id, task_id, activity_id, min_status, max_status); -- void
+eq.cross_zone_reset_activity_by_group_id(group_id, task_id, activity_id, min_status, max_status); -- void
+eq.cross_zone_reset_activity_by_raid_id(raid_id, task_id, activity_id, min_status, max_status); -- void
+eq.cross_zone_reset_activity_by_guild_id(guild_id, task_id, activity_id, min_status, max_status); -- void
+eq.cross_zone_update_activity_by_char_id(character_id, task_id, activity_id, activity_count, min_status, max_status); -- void
+eq.cross_zone_update_activity_by_group_id(group_id, task_id, activity_id, activity_count, min_status, max_status); -- void
+eq.cross_zone_update_activity_by_raid_id(raid_id, task_id, activity_id, activity_count, min_status, max_status); -- void
+eq.cross_zone_update_activity_by_guild_id(guild_id, task_id, activity_id, activity_count, min_status, max_status); -- void
 eq.debug(std::string message); -- void
 eq.debug(std::string message, int level); -- void
 eq.delete_data(std::string bucket_key); -- bool
@@ -468,7 +505,23 @@ eq.update_zone_header(std::string type, std::string value); -- void
 eq.voice_tell(const char *str, uint32 macro_num, uint32 race_num, uint32 gender_num); -- void
 eq.wear_change(uint32 slot, uint32 texture); -- void
 eq.world_emote(int type, const char *str); -- void
-eq.world_wide_marquee(uint32 type, uint32 priority, uint32 fadein, uint32 fadeout, uint32 duration, const char *message); -- void
+eq.world_wide_assign_task(uint32 task_id, bool enforce_level_requirement, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_cast_spell(uint32 spell_id, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_disable_task(uint32 task_id, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_enable_task(uint32 task_id, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_fail_task(uint32 task_id, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_message(uint32 type, string message, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_marquee(uint32 color_id, uint32 priority, uint32 fade_in, uint32 fade_out, uint32 duration, string message, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_move(string zone_short_name, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_move_instance(uint16 instance_id, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_remove_spell(uint32 spell_id, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_remove_task(uint32 task_id, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_reset_activity(uint32 task_id, int activity_id, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_set_entity_variable_client(string variable_name, string variable_value, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_set_entity_variable_npc(string variable_name, string variable_value); -- void
+eq.world_wide_signal_client(uint32 signal, uint8 min_status, uint8 max_status); -- void
+eq.world_wide_signal_npc(uint32 signal); -- void
+eq.world_wide_update_activity(uint32 task_id, int activity_id, int activity_count, uint8 min_status, uint8 max_status); -- void
 eq.zone(const char *zone_name); -- void
 eq.zone_emote(int type, const char *str); -- void
 eq.zone_group(const char *zone_name); -- void
