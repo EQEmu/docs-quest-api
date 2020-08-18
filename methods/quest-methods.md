@@ -435,6 +435,7 @@ eq.path_resume(); -- void
 eq.pause(int duration); -- void
 eq.pause_timer(const char *timer); -- void
 eq.popup(const char *title, const char *text, uint32 id, uint32 buttons, uint32 duration); -- void
+eq.process_mobs_while_zone_empty(bool on); -- void
 eq.rain(int weather); -- void
 eq.reloadzonestaticdata(); -- void
 eq.remove_all_from_instance(uint32 instance_id); -- void
