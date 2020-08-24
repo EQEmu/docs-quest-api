@@ -25,6 +25,7 @@
 * [Spawn Methods \(Lua\)](methods/spawn-methods-lua.md)
 * [Spell Methods \(Lua\)](methods/spell-methods-lua.md)
 * [Stat Bonuses Methods \(Lua\)](methods/stat-bonuses-methods-lua.md)
+* [Lua Cheatsheet](methods/lua-cheatsheet.md)
 
 ## Perl
 
