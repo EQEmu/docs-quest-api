@@ -195,6 +195,7 @@ quest::qs_player_event(int character_id, string message)
 quest::qs_send_query(string query)
 quest::rain(int weather)
 quest::rebind(int zone_id, float X, float Y, float Z)
+quest::removeitem(int item_id, [int quantity = 1])
 quest::removetitle(int title_set_id)
 quest::repopzone()
 quest::resettaskactivity(int task_id, int activity_id)
@@ -441,6 +442,8 @@ eq.remove_area(int id); -- void
 eq.remove_from_instance(uint32 instance_id); -- void
 eq.remove_from_instance_by_char_id(uint32 instance_id, uint32 char_id); -- void
 eq.remove_spawn_point(uint32 spawn2_id); -- void
+eq.remove_item(uint32 item_id); -- void
+eq.remove_item(uint32 item_id, uint32 quantity); -- void
 eq.remove_title(uint32 title_set); -- void
 eq.repop_zone(); -- void
 eq.reset_task_activity(int task, int activity); -- void
