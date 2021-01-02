@@ -1859,7 +1859,7 @@ sub EVENT_ENVIRONMENTAL_DAMAGE {
 
       **Usage:**
 
-      Deletes a quest global. Please consider using [Data Buckets](https://github.com/EQEmu/Server/wiki/Data-Buckets) instead of quest globals.
+      Deletes a quest global. Please consider using [Data Buckets](https://app.gitbook.com/@eqemu/s/server/categories/scripting/using-data-buckets) instead of quest globals.
 
       **Example:**
 
@@ -3676,7 +3676,7 @@ quest::(2001, 3);
 
       **Usage:**
 
-      Used to set a quest global.  **Consider using** [**Data Buckets**](https://github.com/EQEmu/Server/wiki/Data-Buckets) **instead.** Note that the name of the global is case sensitive.
+      Used to set a quest global.  **Consider using** [**Data Buckets**](https://app.gitbook.com/@eqemu/s/server/categories/scripting/using-data-buckets) **instead.** Note that the name of the global is case sensitive.
 
 | **Option** | **NPC ID** | **Player** | **Zone** |
 | :--- | :--- | :--- | :--- |
