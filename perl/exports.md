@@ -59,7 +59,7 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/Se
 | $oncursor{itemid} | Checks the character's front item on the cursor for an item |
 | $objectid | Returns the object id of the clicked item \(in EVENT\_CLICK\_OBJECT\) |
 | $mlevel | Returns the level of the mob that the user triggered the Event on. |
-| $mname | Returns the mob's name \(returns non-clean, for a clean name use |
+| $mname | Returns the mob's name \(returns non-clean, for a clean name use $mob-&gt;GetCleanName\(\) |
 | $mobid | Returns the npc\_types ID of the mob that the user triggered the Event on. |
 | $name | Returns the name of the user that triggered the Event. |
 | $picked\_up\_id | Returns the item id picked up \(in EVENT\_PLAYER\_PICKUP\) |
