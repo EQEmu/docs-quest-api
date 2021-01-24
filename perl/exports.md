@@ -56,12 +56,12 @@ A full list can always be found in the EQEmu source [https://github.com/EQEmu/Se
 | $langid | Returns the language id the player/npc is currently using. \(in EVENT\_SAY, EVENT\_AGGRO\_SAY, EVENT\_PROXIMITY\_SAY\) |
 | $looted\_charges | Returns the charges of the looted item \(in EVENT\_LOOT\) |
 | $looted\_id | Returns the ID of the looted item \(in EVENT\_LOOT\) |
-| $oncursor{itemid} | Checks the character's front item on the cursor for an item |
-| $objectid | Returns the object id of the clicked item \(in EVENT\_CLICK\_OBJECT\) |
 | $mlevel | Returns the level of the mob that the user triggered the Event on. |
-| $mname | Returns the mob's name \(returns non-clean, for a clean name use $mob-&gt;GetCleanName\(\) |
+| $mname | Returns the mob's name \(returns non-clean name, for a clean name use $mob-&gt;GetCleanName\(\) \) |
 | $mobid | Returns the npc\_types ID of the mob that the user triggered the Event on. |
 | $name | Returns the name of the user that triggered the Event. |
+| $objectid | Returns the object id of the clicked item \(in EVENT\_CLICK\_OBJECT\) |
+| $oncursor{itemid} | Checks the character's front item on the cursor for an item |
 | $picked\_up\_id | Returns the item id picked up \(in EVENT\_PLAYER\_PICKUP\) |
 | $popupid | Returns the ID of the popup window \(in EVENT\_POPUPRESPONSE\) |
 | $race | Returns the race of the user that triggered the Event. |
