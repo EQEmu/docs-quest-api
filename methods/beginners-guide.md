@@ -84,7 +84,7 @@ $a =~ $b    #:: If string variable $a contains/matches the string variable $b, c
 {% tab title="Lua" %}
 ```lua
 a == b    #:: If variable a is the same as variable b, carry on.
-a != b    #:: If variable a is NOT the same as variable b, carry on.
+a ~= b    #:: If variable a is NOT the same as variable b, carry on.
 a > b    #:: If variable a is greater than variable b, carry on.
 a < b    #:: If variable a is less than variable b, carry on.
 a >= b    #:: If variable a is greater than or equal to variable b, carry on.
