@@ -4,6 +4,13 @@ description: These are the Client object methods available through the EQEmu Que
 
 # Client Methods
 
+{% hint style="info" %}
+We are actively working on a system to explore the EQEmu Quest API.  Please cross-reference with the new system as needed.
+
+* Spire Quest API Explorer for [**Perl Client Methods**](http://spire.akkadius.com/quest-api-explorer?lang=perl&type=Client)
+* Spire Quest API Explorer for [**Lua Client Methods**](http://spire.akkadius.com/quest-api-explorer?lang=lua&type=Client)\*\*\*\*
+{% endhint %}
+
 {% tabs %}
 {% tab title="Perl" %}
 ```perl
