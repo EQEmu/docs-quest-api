@@ -301,6 +301,7 @@ client:CheckSpecializeIncrease(int spell_id); -- void
 client:ClearCompassMark(); -- void
 client:ClearZoneFlag(int zone_id); -- void
 client:Connected(); -- bool
+client:CountItem(uint32 item_id);  -- int
 client:DecreaseByID(uint32 type, int amt); -- bool
 client:DeleteItemInInventory(int slot_id, int quantity); -- void
 client:DeleteItemInInventory(int slot_id, int quantity, bool update_client); -- void
@@ -472,6 +473,7 @@ client:QueuePacket(Lua_Packet app, bool ack_req); -- void
 client:QueuePacket(Lua_Packet app, bool ack_req, int client_connection_status); -- void
 client:QueuePacket(Lua_Packet app, bool ack_req, int client_connection_status, int filter); -- void
 client:RefundAA(); -- void
+client:RemoveItem(uint32 item_id, uint32 quantity); -- void
 client:ResetAA(); -- void
 client:ResetDisciplineTimer(uint32 timer_id); -- void
 client:ResetTrade(); -- void
@@ -485,6 +487,7 @@ client:SendItemScale(Lua_ItemInst inst); -- void
 client:SendMarqueeMessage(uint32 type, uint32 priority, uint32 fade_in, uint32 fade_out, uint32 duration, std::string msg); -- void
 client:SendOPTranslocateConfirm(Lua_Mob caster, int spell_id); -- void
 client:SendSound(); -- void
+client:SendToInstance(string instance_type, string zone_short_name, uint32 instance_version, float x, float y, float z, float heading, string instance_identifier, uint32 duration); -- void
 client:SendWebLink(const char *site); -- void
 client:SendZoneFlagInfo(Lua_Client to); -- void
 client:SetAAPoints(int points); -- void
