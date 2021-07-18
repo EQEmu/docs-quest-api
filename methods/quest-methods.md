@@ -190,6 +190,7 @@ quest::playerrace(int race_id)
 quest::playersize(int newsize)
 quest::playertexture(int texture_id)
 quest::popup(string window_title, string message, int popup_id, int buttons, int duration)
+quest::processmobswhilezoneempty(int on/off)
 quest::pvp(string mode [on|off])
 quest::qs_player_event(int character_id, string message)
 quest::qs_send_query(string query)
@@ -435,6 +436,7 @@ eq.path_resume(); -- void
 eq.pause(int duration); -- void
 eq.pause_timer(const char *timer); -- void
 eq.popup(const char *title, const char *text, uint32 id, uint32 buttons, uint32 duration); -- void
+eq.process_mobs_while_zone_empty(bool on); -- void
 eq.rain(int weather); -- void
 eq.reloadzonestaticdata(); -- void
 eq.remove_all_from_instance(uint32 instance_id); -- void
@@ -3303,6 +3305,25 @@ sub EVENT_POPUPRESPONSE {
           quest::movepc(186,-393,656,3);
      }
 }
+```
+
+### quest::processmobswhilezoneempty
+
+      **Parameter\(s\):**
+
+      on _\(int\)_
+
+      **Usage:**
+
+      Enables or disables mob processing on a static or not yet timedout dynamic zone while the zone is empty of players.
+
+      **Example:**
+
+```text
+#:: Turn mob processing on
+quest::processmobswhilezoneempty(1) 
+#:: Turn mob processing off
+quest::processmobswhilezoneempty(0) 
 ```
 
 ### pvp
