@@ -535,23 +535,21 @@ eq.zone_raid(const char *zone_name); -- void
 {% endtab %}
 {% endtabs %}
 
+## ProTip: hit ctrl + f \(Windows\) or ⌘ + f \(Mac\) to FIND something on this page
 
+### AssignGroupToInstance
 
-### ProTip: hit ctrl + f \(Windows\) or ⌘ + f \(Mac\) to FIND something on this page
+```text
+  **Parmeter:**
 
+  instance\_id _\(uint16\)_
 
+  **Usage:**
 
-#### AssignGroupToInstance
+  Assigns a group to an instance.
 
-      **Parmeter:**
-
-      instance\_id _\(uint16\)_
-
-      **Usage:**
-
-      Assigns a group to an instance.
-
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Create a scalar variable to store instance_id--GetInstanceID returns int
@@ -559,17 +557,19 @@ my $Instance = quest::GetInstanceID($zonesn, $instanceversion);
 quest::AssignGroupToInstance($Instance);
 ```
 
-#### AssignRaidToInstance
+### AssignRaidToInstance
 
-      **Parmeter:**
+```text
+  **Parmeter:**
 
-      instance\_id _\(uint16\)_
+  instance\_id _\(uint16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Assigns a raid to an instance.
+  Assigns a raid to an instance.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Create a scalar variable to store instance_id
@@ -577,17 +577,19 @@ my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: GetInstanceI
 quest::AssignRaidToInstance($Instance);
 ```
 
-#### AssignToInstance
+### AssignToInstance
 
-      **Parameter:**
+```text
+  **Parameter:**
 
-      instance\_id _\(uint16\)_
+  instance\_id _\(uint16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Assigns a single player to an instance.
+  Assigns a single player to an instance.
 
-      **Example**
+  **Example**
+```
 
 ```perl
 #:: Create a scalar variable to store instance_id
@@ -595,17 +597,19 @@ my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: GetInstanceI
 quest::AssignToInstance($Instance);
 ```
 
-#### AssignToInstanceByCharID
+### AssignToInstanceByCharID
 
-      **Parameter:**
+```text
+  **Parameter:**
 
-      instance\_id _\(uint16\)_, char\_id _\(uint32\)_
+  instance\_id _\(uint16\)_, char\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Assigns a single player to an instance by character ID.
+  Assigns a single player to an instance by character ID.
 
-      **Example**
+  **Example**
+```
 
 ```perl
 #:: Create a scalar variable to store instance_id
@@ -613,134 +617,150 @@ my $Instance = quest::GetInstanceIDByCharID($zonesn, $instanceversion, $charid);
 quest::AssignToInstanceByCharID($Instance, $charid);
 ```
 
-#### ChooseRandom
+### ChooseRandom
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      option1, option2, option3...
+  option1, option2, option3...
 
-      **Usage:**
+  **Usage:**
 
-      Returns one of the items listed in its arguments randomly.
+  Returns one of the items listed in its arguments randomly.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Choose a random reward: 1001 - Cloth Cap, 1004 - Cloth Shirt, 1011 - Cloth Pants
 quest::summonitem(quest::ChooseRandom(1001, 1004, 1011);
 ```
 
-#### CreateInstance
+### CreateInstance
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_name _\(string\)_, version _\(uint16\)_, duration _\(uint32\)_
+  zone\_name _\(string\)_, version _\(uint16\)_, duration _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Creates an instance in the given zone using specified version and duration.
+  Creates an instance in the given zone using specified version and duration.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 quest::CreateInstance("mirb", 50, 10800);
 ```
 
-#### DestroyInstance
+### DestroyInstance
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      instance\_id _\(uint16\)_
+  instance\_id _\(uint16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Destroys the given instance.
+  Destroys the given instance.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 quest::DestroyInstance(50);
 ```
 
-#### FlagInstanceByGroupLeader
+### FlagInstanceByGroupLeader
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone _\(uint32\)_, version _\(uint16\)_
+  zone _\(uint32\)_, version _\(uint16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Assigns the group leader's instance to a player
+  Assigns the group leader's instance to a player
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Zone 237 (mirb), instance 50
 quest::FlagInstanceByGroupLeader(237,50);
 ```
 
-#### FlagInstanceByRaidLeader
+### FlagInstanceByRaidLeader
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone _\(uint32\)_, version _\(uint16\)_
+  zone _\(uint32\)_, version _\(uint16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Assigns the raid leader's instance to a player
+  Assigns the raid leader's instance to a player
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Zone 237 (mirb), instance 50
 quest::FlagInstanceByRaidLeader(237,50);
 ```
 
-#### FlyMode
+### FlyMode
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      mode \[0-3\] _\(uint8\)_
+  mode \[0-3\] _\(uint8\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets flymode for player where 0 = Off, 1 = On, 2 = Levitate.
+  Sets flymode for player where 0 = Off, 1 = On, 2 = Levitate.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
  #:: Turn fly mode on
 quest::FlyMode(1);
 ```
 
-#### GetCharactersInInstance
+### GetCharactersInInstance
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      instance\_id _\(uint16\)_
+  instance\_id _\(uint16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns a hash of character id and instance id
+  Returns a hash of character id and instance id
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Instance ID 50
 quest::GetCharactersInInstance(50); #:: Returns 50,123456
 ```
 
-#### GetInstanceID
+### GetInstanceID
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_name _\(string\)_, version _\(uint16\)_
+  zone\_name _\(string\)_, version _\(uint16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the instance id of the given zone/verison.
+  Returns the instance id of the given zone/verison.
 
-      **Example**
+  **Example**
+```
 
 ```perl
 #:: Create a scalar variable to store instance_id
@@ -748,17 +768,19 @@ my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: Returns uint
 quest::AssignToInstance($Instance);
 ```
 
-#### GetInstanceIDByCharID
+### GetInstanceIDByCharID
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_name _\(string\)_, version _\(int16\)_, char\_id _\(uint32\)_
+  zone\_name _\(string\)_, version _\(int16\)_, char\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the instance ID of the given zone and version by character ID.
+  Returns the instance ID of the given zone and version by character ID.
 
-      **Example**
+  **Example**
+```
 
 ```perl
 #:: Create a scalar variable to store instance_id
@@ -766,34 +788,38 @@ my $Instance = quest::GetInstanceIDByCharID($zonesn, $instanceversion, $charid);
 quest::AssignToInstance($Instance);
 ```
 
-#### GetInstanceTimer
+### GetInstanceTimer
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Returns the timer for the instance.
+  Returns the timer for the instance.
 
-      **Example**
+  **Example**
+```
 
 ```perl
 quest::GetInstanceTimer(); #:: Returns uint32
 ```
 
-#### GetInstanceTimerByID
+### GetInstanceTimerByID
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      instance\_id _\(uint16\)_
+  instance\_id _\(uint16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the duration timer of the specified instance.  
-      Note: If you do not provide an instance\_id in the method it defaults to instance id 0 and returns 0 for time remaining.
+  Returns the duration timer of the specified instance.  
+  Note: If you do not provide an instance\_id in the method it defaults to instance id 0 and returns 0 for time remaining.
 
-      **Example**
+  **Example**
+```
 
 ```perl
 #:: Create a scalar variable to store instance_id
@@ -801,214 +827,240 @@ my $Instance = quest::GetInstanceID($zonesn, $instanceversion); #:: Returns uint
 quest::GetInstanceTimerByID($Instance); #:: Returns timer int
 ```
 
-#### GetSpellResistType
+### GetSpellResistType
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spell\_id _\(uint32\)_
+  spell\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the [Resist Type](https://github.com/EQEmu/Server/wiki/Resist-Types) of the specified spell.
+  Returns the [Resist Type](https://github.com/EQEmu/Server/wiki/Resist-Types) of the specified spell.
 
-      **Example**
+  **Example**
+```
 
 ```perl
 quest::GetSpellResistType($spell_id); #:: Returns int
 ```
 
-#### GetSpellTargetType
+### GetSpellTargetType
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spell\_id _\(uint32\)_
+  spell\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the [Target Type](https://github.com/EQEmu/Server/wiki/Target-Types) of the specified spell.
+  Returns the [Target Type](https://github.com/EQEmu/Server/wiki/Target-Types) of the specified spell.
 
-      **Example**
+  **Example**
+```
 
 ```perl
 quest::GetSpellTargetType($spell_id); #:: Returns int
 ```
 
-#### GetTimeSeconds
+### GetTimeSeconds
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Returns unix time in seconds.
+  Returns unix time in seconds.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 quest::GetTimeSeconds(); #:: Returns int
 ```
 
-#### GetZoneID
+### GetZoneID
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone _\(string\)_
+  zone _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the zone id.
+  Returns the zone id.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 quest::GetZoneID($zonesn); #:: Returns int
 ```
 
-#### GetZoneLongName
+### GetZoneLongName
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone _\(string\)_
+  zone _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the long name of the zone.
+  Returns the long name of the zone.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 quest::GetZoneLongName($zonesn); #:: Returns string
 ```
 
-#### IsBeneficialSpell
+### IsBeneficialSpell
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spell\_id _\(uint32\)_
+  spell\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns true if the specified spell is beneficial.
+  Returns true if the specified spell is beneficial.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 quest::IsBeneficialSpell($spell_id); #:: Returns 0 or 1
 ```
 
-#### IsEffectInSpell
+### IsEffectInSpell
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spell\_id _\(uint32\)_, effect\_id _\(uint32\)_
+  spell\_id _\(uint32\)_, effect\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns true if the specified spell has the specified [Spell Effect](https://github.com/EQEmu/Server/wiki/Spell-Effect-IDs).
+  Returns true if the specified spell has the specified [Spell Effect](https://github.com/EQEmu/Server/wiki/Spell-Effect-IDs).
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Check for Spell Effect 23 - Fear
 quest::IsEffectInSpell($spell_id, 23); #:: Returns 0 or 1
 ```
 
-#### IsRunning
+### IsRunning
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Returns the running state--0 is walking, 1 is running.
+  Returns the running state--0 is walking, 1 is running.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 quest::IsRunning(); #:: Returns 0 or 1
 ```
 
-#### LearnRecipe
+### LearnRecipe
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      recipe\_id _\(uint32\)_
+  recipe\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Makes the client learn a recipe.
+  Makes the client learn a recipe.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Teach recipe_id 2141 - Pickled Bixie
 quest::LearnRecipe(2141);
 ```
 
-#### MerchantCountItem
+### MerchantCountItem
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_id _\(uint32\)_, item\_id _\(uint32\)_
+  npc\_id _\(uint32\)_, item\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the number of the specified item in stock at the specified merchant.
+  Returns the number of the specified item in stock at the specified merchant.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Find out how many 12260 - Fuzzlecutter Formula 5000 are in stock at Ping_Fuzzlecutter (9133)
 quest::MerchantCountItem(9133, 12260); #:: Returns int
 ```
 
-#### MerchantSetItem
+### MerchantSetItem
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_id _\(uint32\)_, item\_id _\(uint32\)_, quantity _\(uint32\)_
+  npc\_id _\(uint32\)_, item\_id _\(uint32\)_, quantity _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Changes the number of the specified items in stock, at the specified quantity, at the specified merchant.
+  Changes the number of the specified items in stock, at the specified quantity, at the specified merchant.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Make sure there is plenty of 12260 - Fuzzlecutter Formula 5000 in stock at Ping_Fuzzlecutter (9133)
 quest::MerchantSetItem(9133, 12260, 1000); #:: Quantity 1000
 ```
 
-#### ModifyNPCStat
+### ModifyNPCStat
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      key _\(string\)_, value _\(string\)_
+  key _\(string\)_, value _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Changes the specified [npc\_types](https://github.com/EQEmu/Server/wiki/npc_types) stat of the specified NPC on the fly--changes are not saved to the npc\_types in the DB.
+  Changes the specified [npc\_types](https://github.com/EQEmu/Server/wiki/npc_types) stat of the specified NPC on the fly--changes are not saved to the npc\_types in the DB.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Adjust the runspeed to 1.25
 quest::modifynpcstat("runspeed", 1.25);
 ```
 
-#### MovePCInstance
+### MovePCInstance
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_id _\(uint32\)_, instance\_id _\(uint32\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_
+  zone\_id _\(uint32\)_, instance\_id _\(uint32\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_
 
-      **Usage:**
+  **Usage:**
 
-      Moves a player to the specified instance of the specified zone at the specified location and heading.
+  Moves a player to the specified instance of the specified zone at the specified location and heading.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_CLICKDOOR {
@@ -1025,17 +1077,19 @@ sub EVENT_CLICKDOOR {
 }
 ```
 
-#### RemoveAllFromInstance
+### RemoveAllFromInstance
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      instance\_id _\(uint16\)_
+  instance\_id _\(uint16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Removes ALL players from an instance by instance ID.
+  Removes ALL players from an instance by instance ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_DEATH_COMPLETE {
@@ -1044,17 +1098,19 @@ sub EVENT_DEATH_COMPLETE {
 }
 ```
 
-#### RemoveFromInstance
+### RemoveFromInstance
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      instance\_id _\(uint16\)_
+  instance\_id _\(uint16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Removes the player that triggered the event from an instance by instance ID.
+  Removes the player that triggered the event from an instance by instance ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_CLICKDOOR {
@@ -1064,17 +1120,19 @@ sub EVENT_CLICKDOOR {
 }
 ```
 
-#### RemoveFromInstanceByCharID
+### RemoveFromInstanceByCharID
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      instance\_id _\(uint16\)_, char\_id _\(uint32\)_
+  instance\_id _\(uint16\)_, char\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Removes a client from an instance by character ID.
+  Removes a client from an instance by character ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Create a scalar variable to store instance_id
@@ -1082,46 +1140,52 @@ my $Instance = quest::GetInstanceIDByCharID($zonesn, $instanceversion, $charid);
 quest::RemoveFromInstanceByCharID($Instance, $charid);
 ```
 
-#### SendMail
+### SendMail
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      to _\(string\)_, from _\(string\)_, subject _\(string\)_, message _\(string\)_
+  to _\(string\)_, from _\(string\)_, subject _\(string\)_, message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to send a mail message.
+  Used to send a mail message.
+```
 
-#### SetRunning
+### SetRunning
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      is\_running _\(bool\)_
+  is\_running _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to toggle run/walk state.
+  Used to toggle run/walk state.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_SPAWN {
-	#:: Set the NPC to run
-	quest::SetRunning(1);
+    #:: Set the NPC to run
+    quest::SetRunning(1);
 }
 ```
 
-#### UpdateInstanceTimer
+### UpdateInstanceTimer
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      instance\_id _\(int16\)_, duration _\(uint32\)_
+  instance\_id _\(int16\)_, duration _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to update a zone instance timer by instance id by the number of seconds specified.
+  Used to update a zone instance timer by instance id by the number of seconds specified.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_CLICKDOOR {
@@ -1133,17 +1197,19 @@ sub EVENT_CLICKDOOR {
 }
 ```
 
-#### UpdateSpawnTimer
+### UpdateSpawnTimer
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spawn2\_id _\(uint32\)_, updated\_time\_till\_repop _\(uint32\)_
+  spawn2\_id _\(uint32\)_, updated\_time\_till\_repop _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to update a spawn timer by spawn2 ID and time specified in ms.
+  Used to update a spawn timer by spawn2 ID and time specified in ms.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_DEATH_COMPLETE {
@@ -1152,36 +1218,40 @@ sub EVENT_DEATH_COMPLETE {
 }
 ```
 
-#### UpdateZoneHeader
+### UpdateZoneHeader
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      key _\(string\)_, value _\(string\)_
+  key _\(string\)_, value _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Allows you to manipulate zone header settings on the fly. The [Quest Manager](https://github.com/EQEmu/Server/blob/c08993b60b7b5328398459a458648a114c3fb331/zone/questmgr.cpp#L3149) lists the following possible strings: ztype, fog\_red, fog\_green, fog\_blue, fog\_minclip, fog\_maxclip, gravity, time\_type, rain\_chance, rain\_duration, snow\_chance, snow\_duration, sky, safe\_x, safe\_y, safe\_z, max\_z, underworld, minclip, maxclip, fog\_density, suspendbuffs.
+  Allows you to manipulate zone header settings on the fly. The [Quest Manager](https://github.com/EQEmu/Server/blob/c08993b60b7b5328398459a458648a114c3fb331/zone/questmgr.cpp#L3149) lists the following possible strings: ztype, fog\_red, fog\_green, fog\_blue, fog\_minclip, fog\_maxclip, gravity, time\_type, rain\_chance, rain\_duration, snow\_chance, snow\_duration, sky, safe\_x, safe\_y, safe\_z, max\_z, underworld, minclip, maxclip, fog\_density, suspendbuffs.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Set the max clip plane to 500 units
 quest::UpdateZoneHeader("maxclip", 500);
 ```
 
-#### activespeakactivity
+### activespeakactivity
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_
+  task\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the Activity ID of the lowest numbered active activity to speak with an NPC in the specified task.
+  Returns the Activity ID of the lowest numbered active activity to speak with an NPC in the specified task.
 
-      **Example:**
+  **Example:**
 
-      If you have task id 150: activity 0--kill three rats, activity 1--talk with NPC, activity 2--kill four fire beetles, activity 3--talk with NPC.
+  If you have task id 150: activity 0--kill three rats, activity 1--talk with NPC, activity 2--kill four fire beetles, activity 3--talk with NPC.
+```
 
 ```perl
 sub EVENT_SAY {
@@ -1201,19 +1271,21 @@ sub EVENT_SAY {
 }
 ```
 
-#### activespeaktask
+### activespeaktask
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Returns the Task ID of the lowest numbered task slot if the player who triggered the event has an active task with an active activity to speak to the NPC \(returns 0 if not\).
+  Returns the Task ID of the lowest numbered task slot if the player who triggered the event has an active task with an active activity to speak to the NPC \(returns 0 if not\).
 
-      **Example:**
+  **Example:**
 
-      If you have task id 150: activity 0--kill three rats, activity 1--talk with NPC, activity 2--kill four fire beetles, activity 3--talk with NPC.
+  If you have task id 150: activity 0--kill three rats, activity 1--talk with NPC, activity 2--kill four fire beetles, activity 3--talk with NPC.
+```
 
 ```perl
 sub EVENT_SAY {
@@ -1233,19 +1305,21 @@ sub EVENT_SAY {
 }
 ```
 
-#### activetasksinset
+### activetasksinset
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_set _\(int\)_
+  task\_set _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the number of tasks in the given TaskSet that the player has active.
+  Returns the number of tasks in the given TaskSet that the player has active.
 
-      **Example:**
+  **Example:**
 
-      You have a TaskSet "20", which consists of three tasks--200, 201, 202.
+  You have a TaskSet "20", which consists of three tasks--200, 201, 202.
+```
 
 ```perl
 sub EVENT_SAY {
@@ -1258,85 +1332,95 @@ sub EVENT_SAY {
 }
 ```
 
-#### addldonloss
+### addldonloss
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      losses _\(int\)_, theme\_id _\(int\)_
+  losses _\(int\)_, theme\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Adds to loss count for LDON adventures by [LDON Theme](https://github.com/EQEmu/Server/wiki/LDON-Themes).
+  Adds to loss count for LDON adventures by [LDON Theme](https://github.com/EQEmu/Server/wiki/LDON-Themes).
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Add a loss for Rujarkian Hills theme
 quest::addldonloss(1,4);
 ```
 
-#### addldonpoints
+### addldonpoints
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      points _\(int\)_, theme\_id _\(int\)_
+  points _\(int\)_, theme\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Adds to points count for LDON adventures by [LDON Theme](https://github.com/EQEmu/Server/wiki/LDON-Themes).
+  Adds to points count for LDON adventures by [LDON Theme](https://github.com/EQEmu/Server/wiki/LDON-Themes).
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Add 100 points for Rujarkian Hills theme
 quest::addldonpoints(100,4);
 ```
 
-#### addldonwin
+### addldonwin
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      wins _\(int\)_, theme\_id _\(int\)_
+  wins _\(int\)_, theme\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Adds to wins count for LDON adventures by [LDON Theme](https://github.com/EQEmu/Server/wiki/LDON-Themes).
+  Adds to wins count for LDON adventures by [LDON Theme](https://github.com/EQEmu/Server/wiki/LDON-Themes).
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Add a loss for Rujarkian Hills theme
 quest::addldonwin(1,4);
 ```
 
-#### addloot
+### addloot
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      item\_id _\(uint32\)_, charges = 0 _\(uint16\)_, equip\_item = true _\(bool\)_
+  item\_id _\(uint32\)_, charges = 0 _\(uint16\)_, equip\_item = true _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Add an item with a number of charges to an NPC's loot \(does not permanently change the loot table or lootdrop entries\). If 'equipitem' is false \(0\), the item will not be used by \(or shown in the hands of\) the NPC.
+  Add an item with a number of charges to an NPC's loot \(does not permanently change the loot table or lootdrop entries\). If 'equipitem' is false \(0\), the item will not be used by \(or shown in the hands of\) the NPC.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Add a 5013 - Rusty Short Sword to the NPC's loot, but do not equip the item
 quest::addloot(5013,0,0);
 ```
 
-#### addskill
+### addskill
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      skill\_id _\(int\)_, value _\(int\)_
+  skill\_id _\(int\)_, value _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets the player's skill, by [Skill ID](https://github.com/EQEmu/Server/wiki/Skills), to the value specified.
+  Sets the player's skill, by [Skill ID](https://github.com/EQEmu/Server/wiki/Skills), to the value specified.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_SAY {
@@ -1367,17 +1451,19 @@ sub Train {
 }
 ```
 
-#### assigntask
+### assigntask
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_, npcid _\(int\)_, enforce\_level\_requirement = false _\(bool\)_
+  task\_id _\(int\)_, npcid _\(int\)_, enforce\_level\_requirement = false _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to assign a task to a client, optionally this can include the NPC ID and whether or not to enforce the level requirement specified in the DB.
+  Used to assign a task to a client, optionally this can include the NPC ID and whether or not to enforce the level requirement specified in the DB.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Assign Task 102
@@ -1390,17 +1476,19 @@ $client->AssignTask(104, $npc->GetID());
 $client->AssignTask(105, $npc->GetID(), 1);
 ```
 
-#### attack
+### attack
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      client\_name _\(string\)_
+  client\_name _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to make the NPC attack a client, by name.
+  Used to make the NPC attack a client, by name.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_SAY {
@@ -1413,17 +1501,19 @@ sub EVENT_SAY {
 }
 ```
 
-#### attacknpc
+### attacknpc
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_entity\_id _\(int\)_
+  npc\_entity\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to make the NPC attack another NPC, by Entity ID.
+  Used to make the NPC attack another NPC, by Entity ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Create a scalar variable to store the Entity ID of a_large_rat
@@ -1432,34 +1522,38 @@ $aggromob = $entity_list->GetMobID(2011);
 quest::attacknpc($aggromob);
 ```
 
-#### attacknpctype
+### attacknpctype
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_
+  npc\_type\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to make the NPC attack another NPC, by NPC Type ID.
+  Used to make the NPC attack another NPC, by NPC Type ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Attack a_large_rat
 quest::attacknpctype(2011);
 ```
 
-#### buryplayercorpse
+### buryplayercorpse
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      character\_id _\(int\)_
+  character\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Buries and depops a single corpse by Character ID.
+  Buries and depops a single corpse by Character ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_SAY {
@@ -1486,78 +1580,88 @@ sub EVENT_SAY {
 }
 ```
 
-#### castspell
+### castspell
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spell\_id _\(int\)_, target\_id _\(int\)_
+  spell\_id _\(int\)_, target\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to make the NPC cast a spell, by ID, on a target, by ID.
+  Used to make the NPC cast a spell, by ID, on a target, by ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Cast spell 12 - Healing, on the user that triggered the event
 quest::castspell(12,$userid);
 ```
 
-#### changedeity
+### changedeity
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      deity\_id _\(int\)_
+  deity\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to permanently change the client character's deity, by [Deity ID](https://github.com/EQEmu/Server/wiki/Deity-List); kicks the client to character select.
+  Used to permanently change the client character's deity, by [Deity ID](https://github.com/EQEmu/Server/wiki/Deity-List); kicks the client to character select.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Change the client character's deity to 201 - Bertoxxulous
 quest::changedeity(201);
 ```
 
-#### checktitle
+### checktitle
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      title\_set\_id _\(int\)_
+  title\_set\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to determine if a player has the specified titleset enabled or not.
+  Used to determine if a player has the specified titleset enabled or not.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Check to see if Title Set 2 (prefix "Arbiter", suffix "Harbinger of the Old World") is enabled
 quest::checktitle(2); #:: Returns bool
 ```
 
-#### clear\_npctype\_cache
+### clear\_npctype\_cache
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_
+  npc\_type\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Clears the NPC Table.
+  Clears the NPC Table.
+```
 
-#### clear\_proximity
+### clear\_proximity
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Clears an NPC's defined proximity.
+  Clears an NPC's defined proximity.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_SPAWN {
@@ -1573,72 +1677,80 @@ sub EVENT_ENTER {
 }
 ```
 
-#### clear\_zone\_flag
+### clear\_zone\_flag
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_id _\(uint32\)_
+  zone\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to clear the Zone Flag, by ID, of a client character.
+  Used to clear the Zone Flag, by ID, of a client character.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Clear the character's Zone Flag (Sleeper's Key) for 128 - The Sleeper's Tomb (sleeper)
 quest::clear_zone_flag(128);
 ```
 
-#### clearspawntimers
+### clearspawntimers
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Used to reset the spawn timers and repop a zone--similar to \#repop force.
+  Used to reset the spawn timers and repop a zone--similar to \#repop force.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 quest::clearspawntimers();
 ```
 
-### collectitems
+## collectitems
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      item\_id _\(int\)_, remove\_item = true _\(bool\)_
+  item\_id _\(int\)_, remove\_item = true _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the number of items by ID that exist in inventory. If remove is true, items are removed as they are counted.
+  Returns the number of items by ID that exist in inventory. If remove is true, items are removed as they are counted.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_SAY {
-	#:: Match text for "hail", case insensitive, and the client that triggered the event has a 1001 - Cloth Cap
-	if ($text=~/hail/i && plugin::check_hasitem($client, 1001)) {
-		quest::emote("steals your cloth cap.");
-		quest::collectitems(1001, 1);
-	}
+    #:: Match text for "hail", case insensitive, and the client that triggered the event has a 1001 - Cloth Cap
+    if ($text=~/hail/i && plugin::check_hasitem($client, 1001)) {
+        quest::emote("steals your cloth cap.");
+        quest::collectitems(1001, 1);
+    }
 }
 ```
 
-### completedtasksinset
+## completedtasksinset
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_set _\(int\)_
+  task\_set _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the number of tasks in the given Task Set that the player has completed.
+  Returns the number of tasks in the given Task Set that the player has completed.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_SAY {
@@ -1651,34 +1763,38 @@ sub EVENT_SAY {
 }
 ```
 
-### countitem
+## countitem
 
 **Parameter\(s\):**
 
-      item\_id _\(uint32\)_
+```text
+  item\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to return the count of a given item, by id.
+  Used to return the count of a given item, by id.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Count the number of 1001 - Cloth Cap
 quest::countitem(1001); #:: Returns Int
 ```
 
-### createBot
+## createBot
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      first\_name _\(string\)_, last\_name _\(string\)_, level _\(int\)_, race\_id _\(int\)_, class\_id _\(int\)_, gender\_id _\(int\)_
+  first\_name _\(string\)_, last\_name _\(string\)_, level _\(int\)_, race\_id _\(int\)_, class\_id _\(int\)_, gender\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to create a bot with the given parameters.
+  Used to create a bot with the given parameters.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_ENTERZONE {
@@ -1687,33 +1803,37 @@ sub EVENT_ENTERZONE {
 }
 ```
 
-### createdoor
+## createdoor
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      model\_name _\(string\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_, object\_type = 58 _\(int\)_, size = 100 _\(int\)_
+  model\_name _\(string\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_, object\_type = 58 _\(int\)_, size = 100 _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Creates a new door, with type 58 and size 100 as the defaults.
+  Creates a new door, with type 58 and size 100 as the defaults.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 quest::createdoor("POKTELE500", -582.532, 2324.96, -47.8143, 120, 58, 100);
 ```
 
-### creategroundobject
+## creategroundobject
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      item\_id _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_, decay\_time _\(uint32\)_
+  item\_id _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_, decay\_time _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Creates an object on the ground with the given parameters, decay time is ms = 300000 by default.
+  Creates an object on the ground with the given parameters, decay time is ms = 300000 by default.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 sub EVENT_WAYPOINT_ARRIVE {
@@ -1722,34 +1842,38 @@ sub EVENT_WAYPOINT_ARRIVE {
 }
 ```
 
-### creategroundobjectfrommodel
+## creategroundobjectfrommodel
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      model\_name _\(string\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_, object\_type _\(int\)_, decay\_time _\(uint32\)_
+  model\_name _\(string\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_, object\_type _\(int\)_, decay\_time _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Creates an object on the ground with the given parameters, decay time is ms = 300000 by default.
+  Creates an object on the ground with the given parameters, decay time is ms = 300000 by default.
 
-      **Example:**
+  **Example:**
+```
 
 ```perl
 #:: Create a 17330 - Bag of Supplies at the given location
 quest::creategroundobjectfrommodel("IT64_ACTORDEF", 2497, -557, -327, 58, 17330);
 ```
 
-### createguild
+## createguild
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      guild\_name _\(string\)_, leader\_name _\(string\)_
+  guild\_name _\(string\)_, leader\_name _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Creates a guild.
+  Creates a guild.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SAY{
@@ -1762,87 +1886,99 @@ sub EVENT_SAY{
 }
 ```
 
-### crosszonemessageplayerbyname
+## crosszonemessageplayerbyname
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      channel\_id _\(int\)_, name _\(string\)_, message _\(string\)_
+  channel\_id _\(int\)_, name _\(string\)_, message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sends a message to a client character on the specified channel. Useful for Expeditions and Shared Tasks.
+  Sends a message to a client character on the specified channel. Useful for Expeditions and Shared Tasks.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::crosszonemessageplayerbyname(15, $name, "Hi.");
 ```
 
-### crosszonesetentityvariablebyclientname
+## crosszonesetentityvariablebyclientname
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      client\_name _\(string\)_, key _\(string\)_, value _\(string\)_
+  client\_name _\(string\)_, key _\(string\)_, value _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets entity variables world-wide for the provided client character.
+  Sets entity variables world-wide for the provided client character.
+```
 
-### crosszonesetentityvariablebynpctypeid
+## crosszonesetentityvariablebynpctypeid
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_, key _\(string\)_, value _\(string\)_
+  npc\_type\_id _\(int\)_, key _\(string\)_, value _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets entity variables world wide with specified npctype\_id.
+  Sets entity variables world wide with specified npctype\_id.
+```
 
-### crosszonesignalclientbycharid
+## crosszonesignalclientbycharid
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      character\_id _\(int\)_, value _\(int\)_
+  character\_id _\(int\)_, value _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Signals the client by character ID world wide.
+  Signals the client by character ID world wide.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Signal the client character who triggered the event with "5000"
 quest::crosszonesignalclientbycharid($charid,5000);
 ```
 
-### crosszonesignalnpcbynpctypeid
+## crosszonesignalnpcbynpctypeid
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(uint32\)_, value _\(uint32\)_
+  npc\_type\_id _\(uint32\)_, value _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Signals all NPC entities world-wide with the specified value.
+  Signals all NPC entities world-wide with the specified value.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Signal all 4036 - a_giant_rat with "99"
 quest::crosszonesignalnpcbynpctypeid(4036, 99);
 ```
 
-### debug
+## debug
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      message _\(string\)_, debug\_level _\(uint8\)_
+  message _\(string\)_, debug\_level _\(uint8\)_
 
-      **Usage:**
+  **Usage:**
 
-      Allows you to export debug information for an event, at the specified level \(1 through 3\).
+  Allows you to export debug information for an event, at the specified level \(1 through 3\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_ENVIRONMENTAL_DAMAGE {
@@ -1853,168 +1989,188 @@ sub EVENT_ENVIRONMENTAL_DAMAGE {
 }
 ```
 
-### delglobal
+## delglobal
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      key _\(string\)_
+  key _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Deletes a quest global. Please consider using [Data Buckets](https://app.gitbook.com/@eqemu/s/server/categories/scripting/using-data-buckets) instead of quest globals.
+  Deletes a quest global. Please consider using [Data Buckets](https://app.gitbook.com/@eqemu/s/server/categories/scripting/using-data-buckets) instead of quest globals.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::delglobal("strongbox");
 ```
 
-### depop
+## depop
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_
+  npc\_type\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Depops an NPC by npc\_type\_id, default is 0 \(self\).
+  Depops an NPC by npc\_type\_id, default is 0 \(self\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Depop self
 quest::depop();
 ```
 
-### depop\_withtimer
+## depop\_withtimer
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_
+  npc\_type\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Depops an NPC by npc\_type\_id, default is 0 \(self\), and restarts the spawn point timer.
+  Depops an NPC by npc\_type\_id, default is 0 \(self\), and restarts the spawn point timer.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Depop self and restart spawn timer
 quest::depop_withtimer();
 ```
 
-### depopall
+## depopall
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_
+  npc\_type\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Depops all NPC entities with npc\_type\_id in the zone. Default is 0 \(self and others like me\).
+  Depops all NPC entities with npc\_type\_id in the zone. Default is 0 \(self and others like me\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Depop all 4036 - a_giant_rat
 quest::depopall(4036);
 ```
 
-### depopzone
+## depopzone
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      start\_spawn\_status _\(bool\)_
+  start\_spawn\_status _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Depops the zone with the specified parameter. Default is false \(don't start spawn timers\).
+  Depops the zone with the specified parameter. Default is false \(don't start spawn timers\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Depop the zone and don't start the spawn timers
 quest::depopzone();
 ```
 
-### ding
+## ding
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Plays the beautiful ding sound, the trumpet fanfare for your glorious deeds. Congratulations, winner. You did it.
+  Plays the beautiful ding sound, the trumpet fanfare for your glorious deeds. Congratulations, winner. You did it.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Ding!
 quest::ding();
 ```
 
-### disable\_proximity\_say
+## disable\_proximity\_say
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Disables proximity say for the NPC. Proximity say must be enabled with quest::set\_proximity\(\); and quest::enable\_proximity\_say\(\);.
+  Disables proximity say for the NPC. Proximity say must be enabled with quest::set\_proximity\(\); and quest::enable\_proximity\_say\(\);.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::disable_proximity_say();
 ```
 
-### disable\_spawn2
+## disable\_spawn2
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spawn2\_id _\(int\)_
+  spawn2\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Disables the spawn point specified and depops any NPC entity from that spawn point.
+  Disables the spawn point specified and depops any NPC entity from that spawn point.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Disable the spawn point for 151562 - spawngroup ID 113004 - npcIDs 15138 (Droon) and 15160 (Proon)
 quest::disable_spawn2(151562);
 ```
 
-### disablerecipe
+## disablerecipe
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      recipe\_id _\(int\)_
+  recipe\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Disables the recipe specified by Recipe ID.
+  Disables the recipe specified by Recipe ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Disable recipe 1 - Blessed Fishing Rod
 quest::disablerecipe(1);
 ```
 
-### disabletask
+## disabletask
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_
+  task\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Disables a task so that it is not available to a client character. Useful if you do not want someone to repeat a task.
+  Disables a task so that it is not available to a client character. Useful if you do not want someone to repeat a task.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Match if the player has an active task
@@ -2042,17 +2198,19 @@ if ($task != 0) {
 }
 ```
 
-### doanim
+## doanim
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      animation\_id _\(int\)_
+  animation\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Makes the NPC perform the indicated [Animation](https://github.com/EQEmu/Server/wiki/Animations).
+  Makes the NPC perform the indicated [Animation](https://github.com/EQEmu/Server/wiki/Animations).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Perform the Cheer animation
@@ -2061,32 +2219,36 @@ quest::doanim(27);
 
 quest::echo
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      emote\_color\_id _\(int\)_, message _\(string\)_
+  emote\_color\_id _\(int\)_, message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Echoes the specified message string, in the specified color, to the client console.
+  Echoes the specified message string, in the specified color, to the client console.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Echo a message in yellow text (15)
 quest::echo(15,"Hello, world");
 ```
 
-### emote
+## emote
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      message _\(string\)_
+  message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Makes the NPC emote the specified message string.
+  Makes the NPC emote the specified message string.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_DEATH_COMPLETE {
@@ -2094,24 +2256,26 @@ sub EVENT_DEATH_COMPLETE {
 }
 ```
 
-### enable\_proximity\_say
+## enable\_proximity\_say
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Enables proximity say for the NPC--the target would not have to have the NPC targeted to interact if the NPC has a defined proximity and proximity say is enabled.
+  Enables proximity say for the NPC--the target would not have to have the NPC targeted to interact if the NPC has a defined proximity and proximity say is enabled.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
-	#:: Create a proximity, 100 units across, 100 units tall, enable proximity say
-	quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50, $z - 50, $z + 50, 1);
-	#:: Also, enable proximity say
-	quest::enable_proximity_say();
+    #:: Create a proximity, 100 units across, 100 units tall, enable proximity say
+    quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50, $z - 50, $z + 50, 1);
+    #:: Also, enable proximity say
+    quest::enable_proximity_say();
 }
 
 sub EVENT_PROXIMITY_SAY {
@@ -2129,17 +2293,19 @@ sub EVENT_PROXIMITY_SAY {
 }
 ```
 
-### enable\_spawn2
+## enable\_spawn2
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spawn2\_id _\(int\)_
+  spawn2\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Enables the specified spawn point.
+  Enables the specified spawn point.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_DEATH_COMPLETE {
@@ -2148,17 +2314,19 @@ sub EVENT_DEATH_COMPLETE {
 }
 ```
 
-### enabledtaskcount
+## enabledtaskcount
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_set _\(int\)_
+  task\_set _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Counts the enabled tasks in the specified Task Set.
+  Counts the enabled tasks in the specified Task Set.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Match if there are no enabled tasks in Task Set 10
@@ -2167,34 +2335,38 @@ if (quest::enabledtaskcount(10) == 0) {
 }
 ```
 
-### enablerecipe
+## enablerecipe
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      recipe\_id _\(int\)_
+  recipe\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Enables the recipe specified by Recipe ID.
+  Enables the recipe specified by Recipe ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Enable recipe 1 - Blessed Fishing Rod
 quest::enablerecipe(1);
 ```
 
-### enabletask
+## enabletask
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_
+  task\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Enables a task.
+  Enables a task.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Match if the player has an active task
@@ -2222,17 +2394,19 @@ if ($task != 0) {
 }
 ```
 
-### enabletitle
+## enabletitle
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      title\_set\_id _\(int\)_
+  title\_set\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Enables the specified Title Set.
+  Enables the specified Title Set.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_ITEM_CLICK {
@@ -2250,54 +2424,60 @@ sub EVENT_ITEM_CLICK {
 }
 ```
 
-### exp
+## exp
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      amount _\(int\)_
+  amount _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Gives the amount of [experience](https://github.com/EQEmu/Server/wiki/Experience-by-Level) specified to the client character.
+  Gives the amount of [experience](https://github.com/EQEmu/Server/wiki/Experience-by-Level) specified to the client character.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Grant 100 experience points
 quest::exp(100);
 ```
 
-### faction
+## faction
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      faction\_id _\(int\)_, value _\(int\)_, temp _\(int\)_
+  faction\_id _\(int\)_, value _\(int\)_, temp _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Gives the client character the faction, specified by Faction ID, in the amount specified by value. Temp is optional, and defaults to 0. Temp values are: 0 \(permanent, with a message\), 1 \(temporary, without a message\), 2 \(temporary, with a message\), or 3 \(permanent, without a message\).
+  Gives the client character the faction, specified by Faction ID, in the amount specified by value. Temp is optional, and defaults to 0. Temp values are: 0 \(permanent, with a message\), 1 \(temporary, without a message\), 2 \(temporary, with a message\), or 3 \(permanent, without a message\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Set faction
-quest::faction(192,10); 	#:: +10 League of Antonican Bards
-quest::faction(184,10); 	#:: +10 Knights of Truth
-quest::faction(135,10); 	#:: +10 Guards of Qeynos
-quest::faction(273,-30); 	#:: -30 Ring of Scale
+quest::faction(192,10);     #:: +10 League of Antonican Bards
+quest::faction(184,10);     #:: +10 Knights of Truth
+quest::faction(135,10);     #:: +10 Guards of Qeynos
+quest::faction(273,-30);     #:: -30 Ring of Scale
 ```
 
-### factionvalue
+## factionvalue
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Returns faction values for the client character that triggered the event. Generally the opposite values of $faction, with 1 being "scowls" and 9 being "ally" \($faction considers 1 to be "ally", and 9 "scowls"\).
+  Returns faction values for the client character that triggered the event. Generally the opposite values of $faction, with 1 being "scowls" and 9 being "ally" \($faction considers 1 to be "ally", and 9 "scowls"\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SAY {
@@ -2309,34 +2489,38 @@ sub EVENT_SAY {
 }
 ```
 
-### failtask
+## failtask
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_
+  task\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Fails the task, by Task ID, for the client character that triggered the event.
+  Fails the task, by Task ID, for the client character that triggered the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Fail Task 216
 quest::failtask(216);
 ```
 
-### firsttaskinset
+## firsttaskinset
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_set _\(int\)_
+  task\_set _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the first task in the specified Task Set.
+  Returns the first task in the specified Task Set.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SAY {
@@ -2352,17 +2536,19 @@ sub EVENT_SAY {
 }
 ```
 
-### follow
+## follow
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      entity\_id _\(int\)_, distance _\(int\)_
+  entity\_id _\(int\)_, distance _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to make an NPC follow another NPC, specified by Entity ID. The distance determines how many units the NPC will follow behind the specified NPC, with a default value of 10; distance is optional.
+  Used to make an NPC follow another NPC, specified by Entity ID. The distance determines how many units the NPC will follow behind the specified NPC, with a default value of 10; distance is optional.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
@@ -2385,89 +2571,99 @@ sub EVENT_TIMER {
 }
 ```
 
-### forcedoorclose
+## forcedoorclose
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      door\_id _\(int\)_, alt\_mode _\(bool\)_
+  door\_id _\(int\)_, alt\_mode _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Forces a door, by Door ID, to close. Alt\_Mode is default false.
+  Forces a door, by Door ID, to close. Alt\_Mode is default false.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Close Door ID 31 in Befallen
 quest::forcedoorclose(31);
 ```
 
-### forcedooropen
+## forcedooropen
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      door\_id _\(int\)_, alt\_mode _\(bool\)_
+  door\_id _\(int\)_, alt\_mode _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Forces a door, by Door ID, to open. Alt\_Mode is default false.
+  Forces a door, by Door ID, to open. Alt\_Mode is default false.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Open Door ID 31 in Befallen
 quest::forcedooropen(31);
 ```
 
-### get\_rule
+## get\_rule
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      rule\_name _\(string\)_
+  rule\_name _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the value of the specified [Rule](https://github.com/EQEmu/Server/wiki/Server-Rules) for the zone you're in.
+  Returns the value of the specified [Rule](https://github.com/EQEmu/Server/wiki/Server-Rules) for the zone you're in.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Get the rule value for rule "Zone:UseZoneController"
 sub EVENT_SAY {
-	if ($text=~/Hail/i) {
-		plugin::Whisper(quest::get_rule("Zone:UseZoneController")); #:: Whispers rule value to client.
-	}
+    if ($text=~/Hail/i) {
+        plugin::Whisper(quest::get_rule("Zone:UseZoneController")); #:: Whispers rule value to client.
+    }
 }
 ```
 
-### get\_spawn\_condition
+## get\_spawn\_condition
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_short _\(string\)_, instance\_id _\(int\)_, condition\_id _\(int\)_
+  zone\_short _\(string\)_, instance\_id _\(int\)_, condition\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the value of the specified spawn condition.
+  Returns the value of the specified spawn condition.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Get the Spawn Condition for Condition ID 1, in the default instance of Lesser Faydark
 quest::get_spawn_condition("lfaydark", 0, 1);  #:: Returns int
 ```
 
-### getguildnamebyid
+## getguildnamebyid
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      guild\_id _\(uint32\)_
+  guild\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the name of the Guild for the specified Guild ID.
+  Returns the name of the Guild for the specified Guild ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_CONNECT {
@@ -2490,130 +2686,142 @@ sub EVENT_CONNECT {
 }
 ```
 
-### getitemname
+## getitemname
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      item identifier _\(uint32\)_
+  item identifier _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the Item Name for the specified item identifier. Note that $itemname is not globally exported.
+  Returns the Item Name for the specified item identifier. Note that $itemname is not globally exported.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_ITEM {
-	#:: Match a 1001 - Cloth Cap
-	if (plugin::takeItems(1001 => 1)) {
-		$ItemName = quest::getitemname(1001);
-		quest::say("Thank you for the $ItemName.")
-	}
-	#:: Return unused items
-	plugin::returnUnusedItems();
+    #:: Match a 1001 - Cloth Cap
+    if (plugin::takeItems(1001 => 1)) {
+        $ItemName = quest::getitemname(1001);
+        quest::say("Thank you for the $ItemName.")
+    }
+    #:: Return unused items
+    plugin::returnUnusedItems();
 }
 ```
 
-### getinventoryslotid
+## getinventoryslotid
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      identifier _\(string\)_
+  identifier _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the Inventory Slot ID for the specified identifier. Reference [Perl Inventory Slot Identifiers](https://github.com/EQEmu/Server/wiki/Perl-Inventory-Slot-Identifiers) for appropriate identifier tokens.
+  Returns the Inventory Slot ID for the specified identifier. Reference [Perl Inventory Slot Identifiers](https://github.com/EQEmu/Server/wiki/Perl-Inventory-Slot-Identifiers) for appropriate identifier tokens.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Create a scalar variable to store an item ID
 my $charmitem = $client->GetItemIDAt(quest::getinventoryslotid("charm"));  #:: returns int
 ```
 
-### getlevel
+## getlevel
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      type _\(int\)_
+  type _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the level for the Type specified. Types can be 0 \(self\), 1 \(group average\), 2 \(raid average\), 3 \(raid average, group average, or self\), or 4 \(self level 2--the highest level attained by self\).
+  Returns the level for the Type specified. Types can be 0 \(self\), 1 \(group average\), 2 \(raid average\), 3 \(raid average, group average, or self\), or 4 \(self level 2--the highest level attained by self\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Get the level of the client character
 quest::getlevel(0);  #:: Returns int
 ```
 
-### getplayerburiedcorpsecount
+## getplayerburiedcorpsecount
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      character\_id _\(int\)_
+  character\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the number of corpses for the specified Character ID that are buried.
+  Returns the number of corpses for the specified Character ID that are buried.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Get the number of burried corpses for character ID 12345
 quest::getplayerburriedcorpsecount(12345); #:: return int
 ```
 
-### getspellname
+## getspellname
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spell\_id _\(uint32\)_
+  spell\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the name of the spell, by spell identifier.
+  Returns the name of the spell, by spell identifier.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_CAST {
     $SpellName = quest::getspellname($spell_id);
     quest::ze("$name cast the spell:  $spell_id - $SpellName.");
-} 
+}
 ```
 
-### gettaskactivitydonecount
+## gettaskactivitydonecount
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_, activity\_id _\(int\)_
+  task\_id _\(int\)_, activity\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the task activity done count, by Task ID and Activity ID, for the client entity.
+  Returns the task activity done count, by Task ID and Activity ID, for the client entity.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Find out how many times the client character has killed 10 beetles in Unrest
 quest::gettaskactivitydonecount(15,3);  #:: Returns int
 ```
 
-### 
+## gettaskname
 
-### gettaskname
+```text
+  **Parameter\(s\):**
 
-      **Parameter\(s\):**
+  task\_id _\(uint32\)_
 
-      task\_id _\(uint32\)_
+  **Usage:**
 
-      **Usage:**
+  Returns the task name, by Task ID, for the client entity.
 
-      Returns the task name, by Task ID, for the client entity.
-
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Match task 1 - kill some rats
@@ -2621,17 +2829,19 @@ $TaskName = quest::gettaskname(1);
 quest::say("Your current task is:  $TaskName");
 ```
 
-### givecash
+## givecash
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      copper _\(int\)_, silver _\(int\)_, gold _\(int\)_, platinum _\(int\)_
+  copper _\(int\)_, silver _\(int\)_, gold _\(int\)_, platinum _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Gives the specified amount of money to the client that triggered the event.
+  Gives the specified amount of money to the client that triggered the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Create a hash for storing cash - 20 to 100cp
@@ -2640,17 +2850,19 @@ my %cash = plugin::RandomCash(20,100);
 quest::givecash($cash{copper},$cash{silver},$cash{gold},$cash{platinum});
 ```
 
-### gmmove
+## gmmove
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      x _\(float\)_, y _\(float\)_, z _\(float\)_
+  x _\(float\)_, y _\(float\)_, z _\(float\)_
 
-      **Usage:**
+  **Usage:**
 
-      Moves the entity to the specified coordinates.
+  Moves the entity to the specified coordinates.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
@@ -2672,17 +2884,19 @@ sub EVENT_DEATH_COMPLETE {
 }
 ```
 
-### gmsay
+## gmsay
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      message _\(string\)_, color\_id _\(int\)_, send\_to\_world _\(bool\)_, guild\_id _\(uint32\)_, minstatus _\(\)_
+  message _\(string\)_, color\_id _\(int\)_, send\_to\_world _\(bool\)_, guild\_id _\(uint32\)_, minstatus _\(\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sends a message to the client console if the parameters are met.  [Color](https://github.com/EQEmu/Server/wiki/Emote-Colors), Send to World, Guild ID, and Minimum Status are all optional, but Color defaults to 0 \(white\), Send to World defaults to 0 \(false\), and Minimum Status defaults to 80.
+  Sends a message to the client console if the parameters are met.  [Color](https://github.com/EQEmu/Server/wiki/Emote-Colors), Send to World, Guild ID, and Minimum Status are all optional, but Color defaults to 0 \(white\), Send to World defaults to 0 \(false\), and Minimum Status defaults to 80.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Send white text to all players in the current zone with an admin status of >= 80
@@ -2697,17 +2911,19 @@ quest::gmsay("Text", 15, 1, 30);
 quest::gmsay("Text", 15, 1, 30, 0);
 ```
 
-### has\_zone\_flag
+## has\_zone\_flag
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_id _\(uint32\)_
+  zone\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to verify that a client character has the required zone flag for the specified zone.
+  Used to verify that a client character has the required zone flag for the specified zone.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_CLICKDOOR {
@@ -2719,34 +2935,38 @@ sub EVENT_CLICKDOOR {
 }
 ```
 
-### incstat
+## incstat
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      stat\_id _\(int\)_, value _\(int\)_
+  stat\_id _\(int\)_, value _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Increases the specified stat by double the specified value. Stat IDs: STR = 0, STA = 1, AGI = 2, DEX = 3, INT = 4, WIS = 5, CHA = 6. Note: if you're increasing stats, the client will have to zone to see the effect.
+  Increases the specified stat by double the specified value. Stat IDs: STR = 0, STA = 1, AGI = 2, DEX = 3, INT = 4, WIS = 5, CHA = 6. Note: if you're increasing stats, the client will have to zone to see the effect.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Increase STR by 20
 quest::incstat(0, 10);
 ```
 
-### isdisctome
+## isdisctome
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      item\_id _\(int\)_
+  item\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to check if the specified item, by Item ID, is a discipline tome. You likely have a plugin for this \(plugin::try\_tome\_handins\).
+  Used to check if the specified item, by Item ID, is a discipline tome. You likely have a plugin for this \(plugin::try\_tome\_handins\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_ITEM {
@@ -2757,17 +2977,19 @@ sub EVENT_ITEM {
 }
 ```
 
-### isdooropen
+## isdooropen
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      door\_id _\(int\)_
+  door\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Checks to see if the specified door is open.
+  Checks to see if the specified door is open.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_CLICKDOOR {
@@ -2778,136 +3000,152 @@ sub EVENT_CLICKDOOR {
 }
 ```
 
-### istaskaappropriate
+## istaskaappropriate
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_
+  task\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to see if a task is set for the appropriate level for the client character who initiated the event.
+  Used to see if a task is set for the appropriate level for the client character who initiated the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Check if task 200 is appropriate
 quest::istaskaappropriate(200);  #:: Returns bool
 ```
 
-### istaskactive
+## istaskactive
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_
+  task\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to determine if a task is active, by Task ID.
+  Used to determine if a task is active, by Task ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Check if task 212 is active
 quest::istaskactive(212); #:: Returns bool
 ```
 
-### istaskactivityactive
+## istaskactivityactive
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_, activity\_id _\(int\)_
+  task\_id _\(int\)_, activity\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to determine if a task activity is active, by Task ID and Activity ID.
+  Used to determine if a task activity is active, by Task ID and Activity ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Check if Activity 9 of Task 212 is active 
 quest::istaskactivityactive(212, 9); #:: Returns bool
 ```
 
-### istaskcompleted
+## istaskcompleted
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id \(int\)
+  task\_id \(int\)
 
-      **Usage:**
+  **Usage:**
 
-      Used to determine if a task is completed, by Task ID.
+  Used to determine if a task is completed, by Task ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Check if task 212 is completed
 quest::istaskcompleted(212); #:: Returns bool
 ```
 
-### istaskenabled
+## istaskenabled
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id \(int\)
+  task\_id \(int\)
 
-      **Usage:**
+  **Usage:**
 
-      Used to determine if a task is enabled, by Task ID.
+  Used to determine if a task is enabled, by Task ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Check if task 212 is enabled
 quest::istaskenabled(212); #:: Returns bool
 ```
 
-### itemlink
+## itemlink
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      item\_id _\(int\)_
+  item\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to send a link of the specified item, by Item ID.
+  Used to send a link of the specified item, by Item ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Send an item link for a 1001 - Cloth Cap
 quest::itemlink(1001);
 ```
 
-### lasttaskinset
+## lasttaskinset
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_set _\(int\)_
+  task\_set _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the last task in the specified Task Set.
+  Returns the last task in the specified Task Set.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Find the Task ID of the last task in Task Set 200
 quest::lasttaskinset(200); #:: Returns int
 ```
 
-### level
+## level
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      new\_level _\(int\)_
+  new\_level _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets the level to the specified new level for the client character that triggered the event.
+  Sets the level to the specified new level for the client character that triggered the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SAY {
@@ -2925,33 +3163,37 @@ sub EVENT_SAY {
 }
 ```
 
-### me
+## me
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      message _\(string\)_
+  message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sends an emote without a name.
+  Sends an emote without a name.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::me("This creature has no need for your money.");
 ```
 
-### movegrp
+## movegrp
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_id _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_
+  zone\_id _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_
 
-      **Usage:**
+  **Usage:**
 
-      Moves the group of the client character that triggered the event to the specified Zone, by Zone ID, to the location specified.
+  Moves the group of the client character that triggered the event to the specified Zone, by Zone ID, to the location specified.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Match text for "we are ready", case insensitive
@@ -2961,17 +3203,19 @@ if ($text=~/We are ready/i) {
 }
 ```
 
-### movepc
+## movepc
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_id _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_
+  zone\_id _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_
 
-      **Usage:**
+  **Usage:**
 
-      Moves the client character that triggered the event to the specified zone, by Zone ID, at the specified location. Heading is optional, but will default to 0 \(North\).
+  Moves the client character that triggered the event to the specified zone, by Zone ID, at the specified location. Heading is optional, but will default to 0 \(North\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Match text for "travel to butcherblock", case insensitive
@@ -2981,17 +3225,19 @@ if ($text=~/travel to butcherblock/i) {
 }
 ```
 
-### moveto
+## moveto
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_, save\_guard\_location _\(bool\)_
+  x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_, save\_guard\_location _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to move the NPC to the specified location. Heading and Save Guard Location are optional. Heading will default to 0 \(North\), and Save Guard Location will also default to 0, causing the NPC to path back. Set Save Guard Location to 1 to make the NPC stay at the moveto location.
+  Used to move the NPC to the specified location. Heading and Save Guard Location are optional. Heading will default to 0 \(North\), and Save Guard Location will also default to 0, causing the NPC to path back. Set Save Guard Location to 1 to make the NPC stay at the moveto location.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_ITEM {
@@ -3007,17 +3253,19 @@ sub EVENT_ITEM {
 }
 ```
 
-### nexttaskinset
+## nexttaskinset
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_set _\(int\)_, task\_id _\(int\)_
+  task\_set _\(int\)_, task\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the next task in the specified Task Set that comes after the specified Task ID.
+  Returns the next task in the specified Task Set that comes after the specified Task ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SAY {
@@ -3043,255 +3291,285 @@ sub EVENT_SAY {
 }
 ```
 
-### npcfeature
+## npcfeature
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      feature _\(string\)_, value _\(int\)_
+  feature _\(string\)_, value _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Allows you to temporarily change the specified feature on the NPC to the specified value. Allowable features are: race, gender, texture, helm, haircolor, beardcolor, eyecolor1, eyecolor2, hair, face, beard, heritage, tatoo, details, and size.
+  Allows you to temporarily change the specified feature on the NPC to the specified value. Allowable features are: race, gender, texture, helm, haircolor, beardcolor, eyecolor1, eyecolor2, hair, face, beard, heritage, tatoo, details, and size.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change the NPC's size to 10
 quest::npcfeature("size", 10);
 ```
 
-### npcgender
+## npcgender
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      gender\_id _\(int\)_
+  gender\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to temporarily change the gender of the NPC as specified: 0 = Male, 1 = Female, 2 = Neuter.
+  Used to temporarily change the gender of the NPC as specified: 0 = Male, 1 = Female, 2 = Neuter.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change the NPC's gender to female
 quest::npcgender(1);
 ```
 
-### npcrace
+## npcrace
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      race\_id _\(int\)_
+  race\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to temporarily change an NPC's [Race](https://github.com/EQEmu/Server/wiki/Race-Types).
+  Used to temporarily change an NPC's [Race](https://github.com/EQEmu/Server/wiki/Race-Types).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change the NPC's Race to Golem (17)
 quest::npcrace(17);
 ```
 
-### npcsize
+## npcsize
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      size _\(int\)_
+  size _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to temporarily change the NPC's size.
+  Used to temporarily change the NPC's size.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change the NPC's size to 17
 quest::npcsize(17);
 ```
 
-### npctexture
+## npctexture
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      texture\_id _\(int\)_
+  texture\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to temporarily change the NPC's texture.
+  Used to temporarily change the NPC's texture.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change the NPC's texture to 2
 quest::npctexture(2);
 ```
 
-### pause
+## pause
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      duration-ms _\(int\)_
+  duration-ms _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Forces the NPC to pause for the specified duration in ms.
+  Forces the NPC to pause for the specified duration in ms.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Pause for 1 second
 quest::pause(1000);
 ```
 
-### permaclass
+## permaclass
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      class\_id _\(int\)_
+  class\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Permanently changes the class of the client character that triggered the event to the specified class, and disconnects them.
+  Permanently changes the class of the client character that triggered the event to the specified class, and disconnects them.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change class to Warrior
 quest::permaclass(1);
 ```
 
-### permagender
+## permagender
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      gender\_id _\(int\)_
+  gender\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Permanently changes the gender of the client character that triggered the event to the specified gender, and disconnects them.
+  Permanently changes the gender of the client character that triggered the event to the specified gender, and disconnects them.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change gender 0 = Male, 1 = Female, 2 = Neuter.
 quest::permagender(0);
 ```
 
-### permarace
+## permarace
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      race\_id _\(int\)_
+  race\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Permanently changes the [Race Type](https://github.com/EQEmu/Server/wiki/Race-Types) of the client character that triggered the event to the specified race, and disconnects them.
+  Permanently changes the [Race Type](https://github.com/EQEmu/Server/wiki/Race-Types) of the client character that triggered the event to the specified race, and disconnects them.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change race to Human
 quest::permarace(1);
 ```
 
-### playerfeature
+## playerfeature
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      feature _\(string\)_, setting _\(int\)_
+  feature _\(string\)_, setting _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Temporarily changes the player feature to the specified setting. Acceptable strings are: race, gender, texture, helm, haircolor, beardcolor, eyecolor1, eyecolor2, hair, face, beard, heritage, tattoo, details, or size.
+  Temporarily changes the player feature to the specified setting. Acceptable strings are: race, gender, texture, helm, haircolor, beardcolor, eyecolor1, eyecolor2, hair, face, beard, heritage, tattoo, details, or size.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change race to Human
 quest::playerfeature("race", 1);
 ```
 
-### playergender
+## playergender
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      gender\_id _\(int\)_
+  gender\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Temporarily changes the gender of the client character that triggered the event to the specified gender.
+  Temporarily changes the gender of the client character that triggered the event to the specified gender.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change gender 0 = Male, 1 = Female, 2 = Neuter.
 quest::playergender(0);
 ```
 
-### playerrace
+## playerrace
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      race\_id _\(int\)_
+  race\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Temporarily changes the [Race Type](https://github.com/EQEmu/Server/wiki/Race-Types) of the client character that triggered the event to the specified race.
+  Temporarily changes the [Race Type](https://github.com/EQEmu/Server/wiki/Race-Types) of the client character that triggered the event to the specified race.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change race to Human
 quest::playerrace(1);
 ```
 
-### playersize
+## playersize
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      newsize _\(int\)_
+  newsize _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Temporarily adjusts the size of the client character that triggered the event to the specified size.
+  Temporarily adjusts the size of the client character that triggered the event to the specified size.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change size to 10
 quest::playersize(10);
 ```
 
-### playertexture
+## playertexture
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      texture\_id _\(int\)_
+  texture\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Temporarily changes the texture of the client character that triggered the event to the specified texture.
+  Temporarily changes the texture of the client character that triggered the event to the specified texture.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change texture to 2
 quest::playertexture(2);
 ```
 
-### popup
+## popup
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      window\_title _\(string\)_, message _\(string\)_, popup\_id _\(int\)_, buttons _\(int\)_, duration _\(int\)_
+  window\_title _\(string\)_, message _\(string\)_, popup\_id _\(int\)_, buttons _\(int\)_, duration _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to create a popup window with the specified parameters. The parameters popup\_id, buttons, and duration are optional. Button parameters are: 0=OK button, 1=Yes/No buttons. Setting duration to 0 results in a popup that will remain until dismissed.
+  Used to create a popup window with the specified parameters. The parameters popup\_id, buttons, and duration are optional. Button parameters are: 0=OK button, 1=Yes/No buttons. Setting duration to 0 results in a popup that will remain until dismissed.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_ENTER {
@@ -3307,36 +3585,40 @@ sub EVENT_POPUPRESPONSE {
 }
 ```
 
-### quest::processmobswhilezoneempty
+## quest::processmobswhilezoneempty
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      on _\(int\)_
+  on _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Enables or disables mob processing on a static or not yet timedout dynamic zone while the zone is empty of players.
+  Enables or disables mob processing on a static or not yet timedout dynamic zone while the zone is empty of players.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Turn mob processing on
 quest::processmobswhilezoneempty(1) 
 #:: Turn mob processing off
-quest::processmobswhilezoneempty(0) 
+quest::processmobswhilezoneempty(0)
 ```
 
-### pvp
+## pvp
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      mode _\(string\)_
+  mode _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Toggles the PVP setting for the client character that triggered the event. String can be on, or off.
+  Toggles the PVP setting for the client character that triggered the event. String can be on, or off.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Turn pvp on
@@ -3345,49 +3627,55 @@ quest::pvp("on");
 quest::pvp("off");
 ```
 
-### qs\_player\_event
+## qs\_player\_event
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      character\_id _\(int\)_, message _\(string\)_
+  character\_id _\(int\)_, message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Adds a record to table `qs_player_events` with the specified parameters.
+  Adds a record to table `qs_player_events` with the specified parameters.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::qs_player_event($charid,"Triggered an event with this API call in it.")
 ```
 
-### qs\_send\_query
+## qs\_send\_query
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      query _\(string\)_
+  query _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Send a raw query to the QueryServ process.
+  Send a raw query to the QueryServ process.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::qs_send_query("SELECT * FROM `qs_player_events` WHERE `event_desc` LIKE '%level%' LIMIT 0,1000;");
 ```
 
-### rain
+## rain
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      weather _\(int\)_
+  weather _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Changes the rainy weather to the specified setting: 0=none, 1=rain. See also quest::snow\(\).
+  Changes the rainy weather to the specified setting: 0=none, 1=rain. See also quest::snow\(\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_ZONE {
@@ -3398,153 +3686,171 @@ sub EVENT_ZONE {
 }
 ```
 
-### rebind
+## rebind
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_id _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_
+  zone\_id _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_
 
-      **Usage:**
+  **Usage:**
 
-      Binds the client character that triggered the event to the specified zone \(by Zone ID\) at the specified location.
+  Binds the client character that triggered the event to the specified zone \(by Zone ID\) at the specified location.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change bind point to Rivervale, X=0, Y=0, Z=3.13
 quest::rebind(19, 0.00, 0.00, 3.13);
 ```
 
-### removetitle
+## removetitle
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      title\_set\_id _\(int\)_
+  title\_set\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Removes the specified Title Set from the client character that triggered the event.
+  Removes the specified Title Set from the client character that triggered the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Remove Title Set 2 (prefix "Arbiter", suffix "Harbinger of the Old World")
 quest::removetitle(2);
 ```
 
-### repopzone
+## repopzone
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Repops the zone and re-enables spawn timers.
+  Repops the zone and re-enables spawn timers.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Repop the zone
 quest::repopzone();
 ```
 
-### resettaskactivity
+## resettaskactivity
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_, activity\_id _\(int\)_
+  task\_id _\(int\)_, activity\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets the done count to 0 for the specified Task ID
+  Sets the done count to 0 for the specified Task ID
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Reset the activity done count for task 202
 quest::resettaskactivity(202);
 ```
 
-### respawn
+## respawn
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_, grid\_id _\(int\)_
+  npc\_type\_id _\(int\)_, grid\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Respawns the specified NPC by npc\_type ID on the specified grid. This is similar to quest::spawn2\(\), but without the specified x, y, z, heading parameters.
+  Respawns the specified NPC by npc\_type ID on the specified grid. This is similar to quest::spawn2\(\), but without the specified x, y, z, heading parameters.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Spawn Fippy Darkpaw again
 quest::respawn(2001);
 ```
 
-### resume
+## resume
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Used to resume pathing on a grid that has been stopped.
+  Used to resume pathing on a grid that has been stopped.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Resume pathing on grid
 quest::resume();
 ```
 
-### safemove
+## safemove
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Moves the client character that triggered the event to the safe coordinates of the current zone.
+  Moves the client character that triggered the event to the safe coordinates of the current zone.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Move to safe
 quest::safemove();
 ```
 
-### save
+## save
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Saves the character data for the client character that triggered the event.
+  Saves the character data for the client character that triggered the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Save Save Save
 quest::save();
 ```
 
-### say
+## say
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      message _\(string\)_, language\_id _\(int\)_
+  message _\(string\)_, language\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to make your NPC speak.  [Language](https://github.com/EQEmu/Server/wiki/Languages) ID is optional--if not specified, the NPC will speak in common tongue.
+  Used to make your NPC speak.  [Language](https://github.com/EQEmu/Server/wiki/Languages) ID is optional--if not specified, the NPC will speak in common tongue.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::say("Hello.");
@@ -3552,98 +3858,108 @@ quest::say("Hello.");
 quest::say("Hello.", 1);
 ```
 
-### saylink
+## saylink
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      message _\(string\)_, silent _\(bool\)_
+  message _\(string\)_, silent _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to create a say link. The silent parameter bools false by default, and is optional.
+  Used to create a say link. The silent parameter bools false by default, and is optional.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::say("This is [" . quest::saylink("purple text") . "] that you can click.");
 ```
 
-### scribespells
+## scribespells
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      max\_level _\(int\)_, min\_level _\(int\)_
+  max\_level _\(int\)_, min\_level _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to add spells to the spell book of the client character that triggered the event.
+  Used to add spells to the spell book of the client character that triggered the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Scribe all spells up to current level
 quest::scribespells($ulevel,1);
 ```
 
-### selfcast
+## selfcast
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spell\_id _\(int\)_
+  spell\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to cause client characters to cast the specified spell on themselves.
+  Used to cause client characters to cast the specified spell on themselves.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Not with your hand, with MY hand!
 quest::selfcast(521);
 ```
 
-### set\_proximity
+## set\_proximity
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      min\_x _\(float\)_, max\_x _\(float\)_, min\_y _\(float\)_, max\_y _\(float\)_, min\_z _\(float\)_, max\_z _\(float\)_, say _\(bool\)_
+  min\_x _\(float\)_, max\_x _\(float\)_, min\_y _\(float\)_, max\_y _\(float\)_, min\_z _\(float\)_, max\_z _\(float\)_, say _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to create a proximity around an NPC. Necessary to define for both EVENT\_ENTER and EVENT\_PROXIMITY\_SAY \(bool the say parameter to true to use this event\). Z min/max and enabling proximity say are both optional.
+  Used to create a proximity around an NPC. Necessary to define for both EVENT\_ENTER and EVENT\_PROXIMITY\_SAY \(bool the say parameter to true to use this event\). Z min/max and enabling proximity say are both optional.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
-	#:: Create a proximity, 100 units across, 100 units tall, without proximity say
-	quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50, $z - 50, $z + 50, 0);
+    #:: Create a proximity, 100 units across, 100 units tall, without proximity say
+    quest::set_proximity($x - 50, $x + 50, $y - 50, $y + 50, $z - 50, $z + 50, 0);
 }
 
 sub EVENT_PROXIMITY_SAY {
-	#:: Match say message for "hail", /i for case insensitive
-	if ($text=~/hail/i) {
-		quest::say("Hello, $name!");
-	}
+    #:: Match say message for "hail", /i for case insensitive
+    if ($text=~/hail/i) {
+        quest::say("Hello, $name!");
+    }
 }
 
 sub EVENT_ENTER {
-	#:: Say "hello" when someone nears
-	quest::say("Hello, $name!");
+    #:: Say "hello" when someone nears
+    quest::say("Hello, $name!");
 }
 ```
 
-### set\_zone\_flag
+## set\_zone\_flag
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_id _\(uint32\)_
+  zone\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to set a zone flag for the client character that triggered the event.
+  Used to set a zone flag for the client character that triggered the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SAY {
@@ -3655,146 +3971,162 @@ sub EVENT_SAY {
 }
 ```
 
-### setallskill
+## setallskill
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      value _\(int\)_
+  value _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets all [Skills](https://github.com/EQEmu/Server/wiki/Skills) to the specified value. You might want to consider a slightly more pinpoint approach like that found in the [Skill Maxer](https://github.com/EQEmu/Server/wiki/Buff-your-Players#Skill_Maxer_PERL) bot.
+  Sets all [Skills](https://github.com/EQEmu/Server/wiki/Skills) to the specified value. You might want to consider a slightly more pinpoint approach like that found in the [Skill Maxer](https://github.com/EQEmu/Server/wiki/Buff-your-Players#Skill_Maxer_PERL) bot.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Set every possible skill to 300--you probably shouldn't do this.
 quest::setallskill(300);
 ```
 
-### setanim
+## setanim
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_, appearance\_number _\(int\)_
+  npc\_type\_id _\(int\)_, appearance\_number _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to make the NPC, specified by npc\_type ID, to do the specified animation. Parameters for the appearance are: 0=Stand, 1=Sit, 2=Duck, 3=Feign Death, 4=Kneel
+  Used to make the NPC, specified by npc\_type ID, to do the specified animation. Parameters for the appearance are: 0=Stand, 1=Sit, 2=Duck, 3=Feign Death, 4=Kneel
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Make Fippy Darkpawn FD (he's going to die anyhow)
 quest::(2001, 3);
 ```
 
-### setglobal
+## setglobal
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      key _\(string\)_, value _\(string\)_, options _\(int\)_, duration _\(string\)_
+  key _\(string\)_, value _\(string\)_, options _\(int\)_, duration _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to set a quest global.  **Consider using** [**Data Buckets**](https://app.gitbook.com/@eqemu/s/server/categories/scripting/using-data-buckets) **instead.** Note that the name of the global is case sensitive.
+  Used to set a quest global.  **Consider using** [**Data Buckets**](https://app.gitbook.com/@eqemu/s/server/categories/scripting/using-data-buckets) **instead.** Note that the name of the global is case sensitive.
+```
 
 | **Option** | **NPC ID** | **Player** | **Zone** |
 | :--- | :--- | :--- | :--- |
-| 0 | Current  | Current  | Current |
-| 1 | All  | Current  | Current |
-| 2 | Current  | All  | Current |
-| 3 | All  | All  | Current |
-| 4 | Current  | Current  | All |
-| 5 | All  | Current  | All |
-| 6 | Current  | All  | All |
-| 7 | All  | All  | All |
+| 0 | Current | Current | Current |
+| 1 | All | Current | Current |
+| 2 | Current | All | Current |
+| 3 | All | All | Current |
+| 4 | Current | Current | All |
+| 5 | All | Current | All |
+| 6 | Current | All | All |
+| 7 | All | All | All |
 
 | **Duration** | **Type** | **Example** |
 | :--- | :--- | :--- |
 | S | Seconds | S15 = 15 Seconds |
 | M | Minutes | M30 = 30 Minutes |
-| H | Hours   | H12 = 12 Hours |
-| D | Days    | D90 = 90 Days |
-| Y | Years   | Y5 = 5 Years |
+| H | Hours | H12 = 12 Hours |
+| D | Days | D90 = 90 Days |
+| Y | Years | Y5 = 5 Years |
 | F | Forever | Never expires. |
 
-      **Example:**
+```text
+  **Example:**
+```
 
 ```text
 #:: Set the qglobal "Example", to a value of "1", for all NPCs and zone, and last forever
 quest::setglobal("Example", 1, 5, "F");
 ```
 
-### setguild
+## setguild
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      guild\_id _\(int\)_, guild\_rank\_id _\(int\)_
+  guild\_id _\(int\)_, guild\_rank\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets the specified guild, by Guild ID, and the specified guild rank, by Rank ID, for the client character that triggered the event. Ranks are: 0=Member, 1=Officer, 2=Leader.
+  Sets the specified guild, by Guild ID, and the specified guild rank, by Rank ID, for the client character that triggered the event. Ranks are: 0=Member, 1=Officer, 2=Leader.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Add to guild 24
 quest::setguild(24,0);
 ```
 
-### sethp
+## sethp
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      mob\_health\_percentage _\(int\)_
+  mob\_health\_percentage _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to set the percentage \(0 to 100\) of health for the NPC.
+  Used to set the percentage \(0 to 100\) of health for the NPC.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Restore HP to 50 percent
 quest::sethp(50);
 ```
 
-### setlanguage
+## setlanguage
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      skill\_id _\(int\)_, value _\(int\)_
+  skill\_id _\(int\)_, value _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to set the specified [Language](https://github.com/EQEmu/Server/wiki/Languages) to the specified skill level \(0 to 100\).
+  Used to set the specified [Language](https://github.com/EQEmu/Server/wiki/Languages) to the specified skill level \(0 to 100\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_ENTERZONE {
-	#:: Set common tongue to 1 for any new player that is not human
-	if ($race ne "Human") {
-		if (!defined $qglobals{"newbiecommon"}) {
-			$client->SetLanguageSkill(0, 1);
-			quest::setglobal("newbiecommon", 1, 5, "F");
-		}
-	}
+    #:: Set common tongue to 1 for any new player that is not human
+    if ($race ne "Human") {
+        if (!defined $qglobals{"newbiecommon"}) {
+            $client->SetLanguageSkill(0, 1);
+            quest::setglobal("newbiecommon", 1, 5, "F");
+        }
+    }
 }
 ```
 
-### setnexthpevent
+## setnexthpevent
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      at\_mob\_percentage _\(int\)_
+  at\_mob\_percentage _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to set an HP event \(to trigger EVENT\_HP\). When the NPC's health decreases to reach this threshold, the event will be triggered.
+  Used to set an HP event \(to trigger EVENT\_HP\). When the NPC's health decreases to reach this threshold, the event will be triggered.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
@@ -3815,17 +4147,19 @@ sub EVENT_HP {
 }
 ```
 
-### setnextinchpevent
+## setnextinchpevent
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      at\_mob\_percentage _\(int\)_
+  at\_mob\_percentage _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to set an HP event \(to trigger EVENT\_HP\). When the NPC's health increases to reach this threshold, the event will be triggered.
+  Used to set an HP event \(to trigger EVENT\_HP\). When the NPC's health increases to reach this threshold, the event will be triggered.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
@@ -3848,85 +4182,95 @@ sub EVENT_HP {
 }
 ```
 
-### set\_rule
+## set\_rule
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      rule\_name _\(string\)_, rule\_value _\(string\)_
+  rule\_name _\(string\)_, rule\_value _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to set the specified [Rule](https://github.com/EQEmu/Server/wiki/Server-Rules) to the specified value.
+  Used to set the specified [Rule](https://github.com/EQEmu/Server/wiki/Server-Rules) to the specified value.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Set Character:MaxLevel to 100 for the current zone.
 quest::set_rule("Character:MaxLevel", 100);
 ```
 
-### setskill
+## setskill
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      skill\_id _\(int\)_, value _\(int\)_
+  skill\_id _\(int\)_, value _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to set the specified [Skill](https://github.com/EQEmu/Server/wiki/Skills) to the specified value.
+  Used to set the specified [Skill](https://github.com/EQEmu/Server/wiki/Skills) to the specified value.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Set baking to 100
 quest::setskill(60, 100);
 ```
 
-### setsky
+## setsky
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      sky _\(uint8\)_
+  sky _\(uint8\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets the parameter for the sky \(0 to 255\)
+  Sets the parameter for the sky \(0 to 255\)
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Turn the sky red
 quest::setsky(250);
 ```
 
-### setstat
+## setstat
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      stat\_id _\(int\)_, value _\(int\)_
+  stat\_id _\(int\)_, value _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets the specified stat to the specified value \(0 to 252\). Stats are: STR=0, STA=1, AGI=2, DEX=3, INT=4; WIS=5, CHA=6.
+  Sets the specified stat to the specified value \(0 to 252\). Stats are: STR=0, STA=1, AGI=2, DEX=3, INT=4; WIS=5, CHA=6.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Set STR to 250
 quest::setstat(0, 250);
 ```
 
-### settarget
+## settarget
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      target\_enum _\(string\)_, target\_id _\(int\)_
+  target\_enum _\(string\)_, target\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets the target, by Target ID, for the specified target\_enum \(either npc\_type ID or entity ID\).
+  Sets the target, by Target ID, for the specified target\_enum \(either npc\_type ID or entity ID\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
@@ -3938,17 +4282,19 @@ sub EVENT_SPAWN {
 }
 ```
 
-### settime
+## settime
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      new\_hour _\(int\)_, new\_min _\(int\)_, update\_world _\(bool\)_
+  new\_hour _\(int\)_, new\_min _\(int\)_, update\_world _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets the time for the zone or the world to the specified hour and minute. Update world is optional, but defaults to true--setting it to false makes the time change only apply to the current zone.
+  Sets the time for the zone or the world to the specified hour and minute. Update world is optional, but defaults to true--setting it to false makes the time change only apply to the current zone.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Make it 5 o'clock somewhere
@@ -3957,17 +4303,19 @@ quest::settime(17,0);
 quest::settime(17);
 ```
 
-### settimer
+## settimer
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      timer\_name _\(string\)_, seconds _\(int\)_
+  timer\_name _\(string\)_, seconds _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets a timer \(in seconds\) that will loop until you stop it. Gets caught by EVENT\_TIMER.
+  Sets a timer \(in seconds\) that will loop until you stop it. Gets caught by EVENT\_TIMER.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
@@ -3985,17 +4333,19 @@ sub EVENT_TIMER {
 }
 ```
 
-### settimerMS
+## settimerMS
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      timer\_name _\(string\)_, milliseconds _\(int\)_
+  timer\_name _\(string\)_, milliseconds _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets a timer \(in milliseconds\) that will loop until you stop it. Gets caught by EVENT\_TIMER. Note that the Lua timer function is in milliseconds as well.
+  Sets a timer \(in milliseconds\) that will loop until you stop it. Gets caught by EVENT\_TIMER. Note that the Lua timer function is in milliseconds as well.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
@@ -4013,136 +4363,150 @@ sub EVENT_TIMER {
 }
 ```
 
-### sfollow
+## sfollow
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Used to stop quest::follow\(\);.
+  Used to stop quest::follow\(\);.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Stop following
 quest::sfollow();
 ```
 
-### shout
+## shout
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      message _\(string\)_
+  message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Makes the NPC shout a message to the zone.
+  Makes the NPC shout a message to the zone.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::shout("Let it all out!");
 ```
 
-### shout2
+## shout2
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      message _\(string\)_
+  message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Makes the NPC shout a message to the world.
+  Makes the NPC shout a message to the world.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::shout2("Let it all out!");
 ```
 
-### showgrid
+## showgrid
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      grid\_id _\(int\)_
+  grid\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Displays the pathing grid specified by Grid ID.
+  Displays the pathing grid specified by Grid ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Show grid 20
 quest::showgrid(20);
 ```
 
-### signal
+## signal
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_id _\(int\)_, wait\_ms _\(int\)_
+  npc\_id _\(int\)_, wait\_ms _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sends a signal to an NPC, specified by NPC ID, after a wait period of the specified milliseconds. Wait is optional and defaults to 0ms. Compare to quest::signalwith\(\). Signals trigger EVENT\_SIGNAL.
+  Sends a signal to an NPC, specified by NPC ID, after a wait period of the specified milliseconds. Wait is optional and defaults to 0ms. Compare to quest::signalwith\(\). Signals trigger EVENT\_SIGNAL.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SAY {
-	#:: If faction is indifferent or better
-	if ($faction < 4) {
-		if ($text=~/hail/i) {
-			quest::say("Greetings, my friend! You may rest here if you like. There are many dangers in this land. May Tunare watch over you when you depart our camp.");
-			#:: signal 70005 - Elmion Hendrys after a 5ms pause
-			quest::signal(70005,5);
-		}
-	} 
-	else {
-		quest::say("You have some nerve to approach a loyal member of the Paladins of Tunare! Run, while you can!");
-	}
+    #:: If faction is indifferent or better
+    if ($faction < 4) {
+        if ($text=~/hail/i) {
+            quest::say("Greetings, my friend! You may rest here if you like. There are many dangers in this land. May Tunare watch over you when you depart our camp.");
+            #:: signal 70005 - Elmion Hendrys after a 5ms pause
+            quest::signal(70005,5);
+        }
+    } 
+    else {
+        quest::say("You have some nerve to approach a loyal member of the Paladins of Tunare! Run, while you can!");
+    }
 }
 ```
 
-### signalwith
+## signalwith
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_id _\(int\)_, signal\_id _\(int\)_, wait\_ms _\(int\)_
+  npc\_id _\(int\)_, signal\_id _\(int\)_, wait\_ms _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sends a signal to an NPC, specified by NPC ID, with a specified Signal ID, after a wait period of the specified milliseconds. Wait is optional and defaults to 0ms. Compare to quest::signal\(\). Signals trigger EVENT\_SIGNAL.
+  Sends a signal to an NPC, specified by NPC ID, with a specified Signal ID, after a wait period of the specified milliseconds. Wait is optional and defaults to 0ms. Compare to quest::signal\(\). Signals trigger EVENT\_SIGNAL.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_WAYPOINT_ARRIVE {
-	if ($wp==12) {
-		#:: Send a signal "2" to Steamfont Mountains >> Charlotte (56108), after 1ms
-		quest::signalwith(56108,2,1);
-	}
-	if ($wp==18) {
-		#:: Send a signal "3" to Steamfont Mountains >> Charlotte (56108), after 1ms
-		quest::signalwith(56108,3,1);
-	}
+    if ($wp==12) {
+        #:: Send a signal "2" to Steamfont Mountains >> Charlotte (56108), after 1ms
+        quest::signalwith(56108,2,1);
+    }
+    if ($wp==18) {
+        #:: Send a signal "3" to Steamfont Mountains >> Charlotte (56108), after 1ms
+        quest::signalwith(56108,3,1);
+    }
 }
 ```
 
-### snow
+## snow
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      weather _\(int\)_
+  weather _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Changes the snowy weather to the specified setting: 0=none, 1=snow. See also quest::rain\(\).
+  Changes the snowy weather to the specified setting: 0=none, 1=snow. See also quest::rain\(\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_ZONE {
@@ -4153,70 +4517,78 @@ sub EVENT_ZONE {
 }
 ```
 
-### spawn
+## spawn
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_, grid\_id _\(int\)_, int\_unused _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_
+  npc\_type\_id _\(int\)_, grid\_id _\(int\)_, int\_unused _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_
 
-      **Usage:**
+  **Usage:**
 
-      Spawns an NPC by NPC Type ID, on the specified grid, by Grid ID. The unused int corresponds to guildwarset--use 0 for this value as it is presently unused.
+  Spawns an NPC by NPC Type ID, on the specified grid, by Grid ID. The unused int corresponds to guildwarset--use 0 for this value as it is presently unused.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Spawn Fippy_Darkpaw (2001) on grid 103 at the specified location
 quest::spawn(2001, 103, 0, 481.20, 1210.80, 3.10);
 ```
 
-### spawn2
+## spawn2
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_, grid\_id _\(int\)_, int\_unused _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_
+  npc\_type\_id _\(int\)_, grid\_id _\(int\)_, int\_unused _\(int\)_, x _\(float\)_, y _\(float\)_, z _\(float\)_, heading _\(float\)_
 
-      **Usage:**
+  **Usage:**
 
-      Spawns an NPC by NPC Type ID, on the specified grid, by Grid ID. The unused int corresponds to guildwarset--use 0 for this value as it is presently unused. Similar to quest::spawn\(\), with the addition of a heading parameter.
+  Spawns an NPC by NPC Type ID, on the specified grid, by Grid ID. The unused int corresponds to guildwarset--use 0 for this value as it is presently unused. Similar to quest::spawn\(\), with the addition of a heading parameter.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Spawn Fippy_Darkpaw (2001) on grid 103 at the specified location, facing East
 quest::spawn2(2001, 103, 0, 481.20, 1210.80, 3.10, 90);
 ```
 
-### spawn\_condition
+## spawn\_condition
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_short _\(string\)_, instance\_id _\(int\)_, condition\_id _\(uint16\)_, value _\(int16\)_
+  zone\_short _\(string\)_, instance\_id _\(int\)_, condition\_id _\(uint16\)_, value _\(int16\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets the condition and value for the zone spawn condition. Instance ID is optional and defaults to 0. You might use this to stop certain NPCs from spawning during a raid event.
+  Sets the condition and value for the zone spawn condition. Instance ID is optional and defaults to 0. You might use this to stop certain NPCs from spawning during a raid event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
-	#:: Set the condition to 3 value 0 to stop a_doomfire_chaosfiend spawn points
-	quest::spawn_condition($zonesn, $instanceversion, 3, 0);
+    #:: Set the condition to 3 value 0 to stop a_doomfire_chaosfiend spawn points
+    quest::spawn_condition($zonesn, $instanceversion, 3, 0);
 }
 ```
 
-### spawn\_from\_spawn2
+## spawn\_from\_spawn2
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      spawn2\_id _\(int\)_
+  spawn2\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to force a spawn\_2 point to spawn an NPC even if disabled, or if it already has an NPC spawned.
+  Used to force a spawn\_2 point to spawn an NPC even if disabled, or if it already has an NPC spawned.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
@@ -4233,100 +4605,108 @@ sub EVENT_TIMER {
 }
 ```
 
-### start
+## start
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      grid\_id _\(int\)_
+  grid\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to start an NPC on the specified pathing grid.
+  Used to start an NPC on the specified pathing grid.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SIGNAL {
-	#:: Match if signal from steamfont/Jogl_Doobraugh.pl is "1"
-	if (($signal == 1) && (($x == -495) || ($x == -734)) && (($y == -154) || ($y == 114))) {
-		quest::emote("Beep.. Beep.. Beep..");
-		quest::pause(60);
-	}
-	#:: Match if signal from steamfont/Jogl_Doobraugh.pl is "2"
-	if ($signal == 2) {
-		#:: Start path grid 178
-		quest::start(178);
-	}
-	#:: Match if signal from steamfont/Jogl_Doobraugh.pl is "3"
-	if ($signal == 3) {
-		#:: Start path grid 179
-		quest::start(179);
-	}
+    #:: Match if signal from steamfont/Jogl_Doobraugh.pl is "1"
+    if (($signal == 1) && (($x == -495) || ($x == -734)) && (($y == -154) || ($y == 114))) {
+        quest::emote("Beep.. Beep.. Beep..");
+        quest::pause(60);
+    }
+    #:: Match if signal from steamfont/Jogl_Doobraugh.pl is "2"
+    if ($signal == 2) {
+        #:: Start path grid 178
+        quest::start(178);
+    }
+    #:: Match if signal from steamfont/Jogl_Doobraugh.pl is "3"
+    if ($signal == 3) {
+        #:: Start path grid 179
+        quest::start(179);
+    }
 }
 ```
 
-### stop
+## stop
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Used to stop an NPC.
+  Used to stop an NPC.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_TIMER {
-	#:: Match "CargoTimer" every five seconds
-	if ($timer eq "CargoTimer") {
-		#:: Match if the quest was not a failure and the time is 8 AM
-		if (!defined($qglobals{CargoClockwork}) && ($zonehour == 8)) {
-			#:: Set a qglobal in case of quest failure
-			quest::setglobal("CargoClockwork",1,1,"H2");
-			#:: Start path grid 177 - path to the windmills
-			quest::start(177);
-		}
-		#:: Match if at the spawnpoint (WP 0) and if delivery was completed
-		if ($x == 700 && $y == -1783 && $delivery == 1) {
-			#:: Stop pathing on path grid 177
-			quest::stop();
-			#:: Reset the delivery state
-			$delivery = 0;
-		}
-	}
+    #:: Match "CargoTimer" every five seconds
+    if ($timer eq "CargoTimer") {
+        #:: Match if the quest was not a failure and the time is 8 AM
+        if (!defined($qglobals{CargoClockwork}) && ($zonehour == 8)) {
+            #:: Set a qglobal in case of quest failure
+            quest::setglobal("CargoClockwork",1,1,"H2");
+            #:: Start path grid 177 - path to the windmills
+            quest::start(177);
+        }
+        #:: Match if at the spawnpoint (WP 0) and if delivery was completed
+        if ($x == 700 && $y == -1783 && $delivery == 1) {
+            #:: Stop pathing on path grid 177
+            quest::stop();
+            #:: Reset the delivery state
+            $delivery = 0;
+        }
+    }
 }
 ```
 
-### stopalltimers
+## stopalltimers
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Stops all the timers currently running from the script.
+  Stops all the timers currently running from the script.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Stop all the timers
 quest::stopalltimers();
 ```
 
-### stoptimer
+## stoptimer
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      timer\_name _\(string\)_
+  timer\_name _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Stops the specified timer from looping.
+  Stops the specified timer from looping.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SPAWN {
@@ -4358,17 +4738,19 @@ sub EVENT_DEATH_COMPLETE {
 }
 ```
 
-### summonallplayercorpses
+## summonallplayercorpses
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      char\_id _\(int\)_, dest\_x _\(float\)_, dest\_y _\(float\)_, dest\_z _\(float\)_, dest\_heading _\(float\)_
+  char\_id _\(int\)_, dest\_x _\(float\)_, dest\_y _\(float\)_, dest\_z _\(float\)_, dest\_heading _\(float\)_
 
-      **Usage:**
+  **Usage:**
 
-      Summons all character corpses, by Char ID, to the specified location.
+  Summons all character corpses, by Char ID, to the specified location.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SAY {
@@ -4380,17 +4762,19 @@ sub EVENT_SAY {
 }
 ```
 
-### summonburiedplayercorpse
+## summonburiedplayercorpse
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      char\_id _\(uint32\)_, dest\_x _\(float\)_, dest\_y _\(float\)_, dest\_z _\(float\)_, dest\_heading _\(float\)_
+  char\_id _\(uint32\)_, dest\_x _\(float\)_, dest\_y _\(float\)_, dest\_z _\(float\)_, dest\_heading _\(float\)_
 
-      **Usage:**
+  **Usage:**
 
-      Summons all buried character corpses, by Char ID, to the specified location.
+  Summons all buried character corpses, by Char ID, to the specified location.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SAY {
@@ -4402,116 +4786,128 @@ sub EVENT_SAY {
 }
 ```
 
-### summonitem
+## summonitem
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      item\_id _\(int\)_, charges _\(int\)_
+  item\_id _\(int\)_, charges _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Summons the specified item, by Item ID, with the specified number of charges, to the cursor of the client character that triggered the event. Charges is the number of charges, or the count of the item, and is optional.
+  Summons the specified item, by Item ID, with the specified number of charges, to the cursor of the client character that triggered the event. Charges is the number of charges, or the count of the item, and is optional.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_ITEM {
-	#:: Match 66gp and a 13990 - Bale of Hay
-	if (plugin::takeItemsCoin(0,0,66,0, 13990 => 1)) {
-		quest::say("'Whatsssss thisssss? You sssseek my blessssssssing? Heh heh heh... Very well... CAZIC-THULE! Take this fruit of Karana into horror'sss dark embrace. Fear and death made manifesssssst. A harvesssst of terror! Here, take your gift of blood and sssstraw. Use its dark powersssss in the name of the Fear Lord!' ");
-		#:: Give a 14320 - Sack of Cursed Hay
-		quest::summonitem(14320);
-		#:: Ding!
-		quest::ding();
-		#:: Give a small amount of experience
-		quest::exp(300);
-		#:: Set faction
-		quest::faction(18, 10);		#:: + Beta Neutral
-	}
-	#:: Return unused items
-	plugin::returnUnusedItems();
+    #:: Match 66gp and a 13990 - Bale of Hay
+    if (plugin::takeItemsCoin(0,0,66,0, 13990 => 1)) {
+        quest::say("'Whatsssss thisssss? You sssseek my blessssssssing? Heh heh heh... Very well... CAZIC-THULE! Take this fruit of Karana into horror'sss dark embrace. Fear and death made manifesssssst. A harvesssst of terror! Here, take your gift of blood and sssstraw. Use its dark powersssss in the name of the Fear Lord!' ");
+        #:: Give a 14320 - Sack of Cursed Hay
+        quest::summonitem(14320);
+        #:: Ding!
+        quest::ding();
+        #:: Give a small amount of experience
+        quest::exp(300);
+        #:: Set faction
+        quest::faction(18, 10);        #:: + Beta Neutral
+    }
+    #:: Return unused items
+    plugin::returnUnusedItems();
 }
 ```
 
-### surname
+## surname
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      name _\(string\)_
+  name _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Changes the surname of the client character that triggered the event to the provided string.
+  Changes the surname of the client character that triggered the event to the provided string.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Set last name to "Toad"
 quest::surname("Toad");
 ```
 
-### targlobal
+## targlobal
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      key _\(string\)_, value _\(string\)_, duration _\(string\)_, npc\_id _\(int\)_, chararacter\_id _\(int\)_, zone\_id _\(int\)_
+  key _\(string\)_, value _\(string\)_, duration _\(string\)_, npc\_id _\(int\)_, chararacter\_id _\(int\)_, zone\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets a quest global with the given parameters to a character anywhere in the world.
+  Sets a quest global with the given parameters to a character anywhere in the world.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Set a global "Example" with a value of "5" for 30 minutes
 quest::targlobal("Example", "5", "M30", 2001, $charid, $zoneid);
 ```
 
-### task\_setselector
+## task\_setselector
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_set\_id _\(int\)_
+  task\_set\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sets the Task Set, by provided Task Set ID.
+  Sets the Task Set, by provided Task Set ID.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Set task set 202
 quest::task_setselector(202);
 ```
 
-### taskexplorearea
+## taskexplorearea
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      explore\_id _\(int\)_
+  explore\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to mark any explore activities \(type 5\), which have the numeric value Explore ID in their Goal ID field, and for which the Zone ID of the activity is either 0 or this zone, as completed.
+  Used to mark any explore activities \(type 5\), which have the numeric value Explore ID in their Goal ID field, and for which the Zone ID of the activity is either 0 or this zone, as completed.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Mark Task 21 complete
 quest::taskexplorearea(21);
 ```
 
-### taskselector
+## taskselector
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_
+  task\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to bring up the Task Selector Window with the specified tasks available for selection \(from 1 to 40 task\_id\(s\)\). Note that when the task selector is brought up via this method, no check is made as to whether the character has the tasks enabled.
+  Used to bring up the Task Selector Window with the specified tasks available for selection \(from 1 to 40 task\_id\(s\)\). Note that when the task selector is brought up via this method, no check is made as to whether the character has the tasks enabled.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_SAY {
@@ -4525,17 +4921,19 @@ sub EVENT_SAY {
 }
 ```
 
-### tasktimeleft
+## tasktimeleft
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_
+  task\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Returns the amount of time left, in seconds, before the specified task runs out. -1 is returned if there is no time limit, or if the player does not have the task.
+  Returns the amount of time left, in seconds, before the specified task runs out. -1 is returned if there is no time limit, or if the player does not have the task.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Create a scalar variable to store the amount of time left for Task ID 22
@@ -4548,17 +4946,19 @@ else {
 }
 ```
 
-### toggle\_spawn\_event
+## toggle\_spawn\_event
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      event\_id _\(uint32\)_, is\_enabled _\(bool\)_, is\_strict _\(bool\)_, reset\_base _\(bool\)_
+  event\_id _\(uint32\)_, is\_enabled _\(bool\)_, is\_strict _\(bool\)_, reset\_base _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to toggle the enabled state of a specified [Spawn Event](https://github.com/EQEmu/Server/wiki/spawn_events), by Event ID. The parameters for is\_enabled, is\_strict, and reset\_base are all false by default.
+  Used to toggle the enabled state of a specified [Spawn Event](https://github.com/EQEmu/Server/wiki/spawn_events), by Event ID. The parameters for is\_enabled, is\_strict, and reset\_base are all false by default.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_DEATH_COMPLETE {
@@ -4567,17 +4967,19 @@ sub EVENT_DEATH_COMPLETE {
 }
 ```
 
-### toggledoorstate
+## toggledoorstate
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      door\_id _\(int\)_
+  door\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Toggles the open/closed state of the specified door.
+  Toggles the open/closed state of the specified door.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_CLICKDOOR {
@@ -4591,252 +4993,280 @@ sub EVENT_CLICKDOOR {
 }
 ```
 
-### traindisc
+## traindisc
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      tome\_item\_id _\(int\)_
+  tome\_item\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Trains the discipline of the specified Tome ID for the client character that triggered the event. Generally you will simply use the plugin: plugin::try\_tome\_handins\(%itemcount, $class, 'Ranger'\);--part of the contents of which are in the example below.
+  Trains the discipline of the specified Tome ID for the client character that triggered the event. Generally you will simply use the plugin: plugin::try\_tome\_handins\(%itemcount, $class, 'Ranger'\);--part of the contents of which are in the example below.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 if (@tomes > 0) {
-	if ($isclass eq $expectclass) {
-		foreach my $i(@tomes) {
-			quest::traindisc($i);
-		}
-	}
+    if ($isclass eq $expectclass) {
+        foreach my $i(@tomes) {
+            quest::traindisc($i);
+        }
+    }
 }
 ```
 
-### traindiscs
+## traindiscs
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      max\_level _\(int\)_, min\_level _\(int\)_
+  max\_level _\(int\)_, min\_level _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to train all disciplines for the class up to the specified max\_level, if that level is less than rule Character:MaxLevel, or the character is a GM. The parameter for min\_level defaults to 1.
+  Used to train all disciplines for the class up to the specified max\_level, if that level is less than rule Character:MaxLevel, or the character is a GM. The parameter for min\_level defaults to 1.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Train disciplines up to level 70
 quest::traindiscs(70,1);
 ```
 
-### unique\_spawn
+## unique\_spawn
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      npc\_type\_id _\(int\)_, grid\_id _\(int\)_, int\_unused _\(int\)_, x _\(float\)_, y _\(float\)_, z\_ \(float\)\_, heading _\(float\)_
+  npc\_type\_id _\(int\)_, grid\_id _\(int\)_, int\_unused _\(int\)_, x _\(float\)_, y _\(float\)_, z\_ \(float\)\_, heading _\(float\)_
 
-      **Usage:**
+  **Usage:**
 
-      Similar to the quest::spawn\(\) command, except that it will not spawn the specified NPC if the same npc\_type ID is already in the zone.
+  Similar to the quest::spawn\(\) command, except that it will not spawn the specified NPC if the same npc\_type ID is already in the zone.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 sub EVENT_DEATH_COMPLETE {
-	my $random_result = int(rand(100));
-	if ($random_result >= 94) {
-		#:: Spawn a Steamfont Mountains >> Minotaur_Hero (56152)
-		quest::unique_spawn(56152,177,0,-1294,1360,-103);
-	}
-	elsif ($random_result >= 88 && $random_result < 94) {
-		#:: Spawn a Steamfont Mountains >> Minotaur_Lord (56161)
-		quest::unique_spawn(56161,0,0,-2179,1319,-101.2);
-	}
-	quest::say("I die soon! Meldrath, help me!");
+    my $random_result = int(rand(100));
+    if ($random_result >= 94) {
+        #:: Spawn a Steamfont Mountains >> Minotaur_Hero (56152)
+        quest::unique_spawn(56152,177,0,-1294,1360,-103);
+    }
+    elsif ($random_result >= 88 && $random_result < 94) {
+        #:: Spawn a Steamfont Mountains >> Minotaur_Lord (56161)
+        quest::unique_spawn(56161,0,0,-2179,1319,-101.2);
+    }
+    quest::say("I die soon! Meldrath, help me!");
 }
 ```
 
-### unscribespells
+## unscribespells
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Unscribes all spells for the client character that triggered the event.
+  Unscribes all spells for the client character that triggered the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Unscribe all spells
 quest::unscribespells();
 ```
 
-### untraindiscs
+## untraindiscs
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      None.
+  None.
 
-      **Usage:**
+  **Usage:**
 
-      Untrains all disciplines for the client character that triggered the event.
+  Untrains all disciplines for the client character that triggered the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Untrain all disciplines
 quest::untraindiscs();
 ```
 
-### updatetaskactivity
+## updatetaskactivity
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      task\_id _\(int\)_, activity\_id _\(int\)_, count _\(int\)_, ignore\_quest\_update _\(bool\)_
+  task\_id _\(int\)_, activity\_id _\(int\)_, count _\(int\)_, ignore\_quest\_update _\(bool\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to increment the done count of the specified task is active. The parameter for ignore\_quest\_update is optional, and defaults to false; the parameter for count default to 1 \(increase count by 1\).
+  Used to increment the done count of the specified task is active. The parameter for ignore\_quest\_update is optional, and defaults to false; the parameter for count default to 1 \(increase count by 1\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Update Task ID 219 activity 9, by 1 count
 quest::updatetaskactivity(216,9);
 ```
 
-### varlink
+## varlink
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      item\_id _\(uint32\)_
+  item\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to create an item link that can be used in a variable.
+  Used to create an item link that can be used in a variable.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Create a scalar variable to store an item link for a 1001 - Cloth Cap
 my $Reward = quest::varlink(1001);
 ```
 
-### voicetell
+## voicetell
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      client\_name _\(string\)_, macro\_id _\(int\)_, race\_id _\(int\)_, gender\_id _\(int\)_
+  client\_name _\(string\)_, macro\_id _\(int\)_, race\_id _\(int\)_, gender\_id _\(int\)_
 
-      **Usage:**
+  **Usage:**
 
-      Plays the specified audio message on the client of the character that triggered the event.
+  Plays the specified audio message on the client of the character that triggered the event.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Send voice macro "Agree" to the client
 quest::voicetell($name, 1);
 ```
 
-### we
+## we
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      emote\_color\_id _\(int\)_, message _\(string\)_
+  emote\_color\_id _\(int\)_, message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sends an emote message to the world in the specified color.
+  Sends an emote message to the world in the specified color.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Send yellow (15) text
 quest::we(15, "Hello world!");
 ```
 
-### wearchange
+## wearchange
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      slot _\(uint8\)_, texture\_id _\(uint16\)_, hero\_forge\_model\_id _\(uint32\)_, elite\_material\_id _\(uint32\)_
+  slot _\(uint8\)_, texture\_id _\(uint16\)_, hero\_forge\_model\_id _\(uint32\)_, elite\_material\_id _\(uint32\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to change the texture/model of visible [Slots](https://github.com/EQEmu/Server/wiki/Inventory-Slots). The parameters for hero\_forge\_model and elite\_material\_id default to 0.
+  Used to change the texture/model of visible [Slots](https://github.com/EQEmu/Server/wiki/Inventory-Slots). The parameters for hero\_forge\_model and elite\_material\_id default to 0.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Change the appearance of the character's weapon
 quest::wearchange(13, 3);
 ```
 
-### worldwidemarquee
+## worldwidemarquee
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      color\_id _\(uint32\)_, priority _\(uint32\)_, fade\_in _\(uint32\)_, fade\_out _\(uint32\)_, duration _\(uint32\)_, message _\(string\)_
+  color\_id _\(uint32\)_, priority _\(uint32\)_, fade\_in _\(uint32\)_, fade\_out _\(uint32\)_, duration _\(uint32\)_, message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Used to send a worldwide marquee message with the specified parameters.
+  Used to send a worldwide marquee message with the specified parameters.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Send a worldwide marquee message in yellow (15), 
 quest::worldwidemarquee(15, 1, 1, 1, 1000, "Hello World!");
 ```
 
-### write
+## write
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      file\_name _\(string\)_, message _\(string\)_
+  file\_name _\(string\)_, message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Writes the specified message string to the specified file name.
+  Writes the specified message string to the specified file name.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 quest::write("HandIn/$npc_name$zonesn.txt","[$timestamp] : $name the $ulevel has handed in $Item1, $Item2, $Item3, $item4 into $npc_name, and gotten $RewardID.");
 ```
 
-### ze
+## ze
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      emote\_color\_id _\(int\)_, message _\(string\)_
+  emote\_color\_id _\(int\)_, message _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sends a zone-wide emote message in the specified color.
+  Sends a zone-wide emote message in the specified color.
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Send a zone-wide emote in yellow (15)
 quest::ze(15,"welcomes the world.");
 ```
 
-### zone
+## zone
 
-      **Parameter\(s\):**
+```text
+  **Parameter\(s\):**
 
-      zone\_name _\(string\)_
+  zone\_name _\(string\)_
 
-      **Usage:**
+  **Usage:**
 
-      Sends the client character that triggered the event to the specified zone \(by zone short name\).
+  Sends the client character that triggered the event to the specified zone \(by zone short name\).
 
-      **Example:**
+  **Example:**
+```
 
 ```text
 #:: Send the player to the West Commonlands

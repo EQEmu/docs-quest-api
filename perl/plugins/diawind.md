@@ -17,7 +17,7 @@
 * It is feature rich, and allows you to highlight keywords in a window and format it nicely rather than trying to remember a bunch of fancy codes.
 * It takes ALOT of work out of making dialogue stuff work. The below markup can be used anywhere in the first argument of the plugin, it is designed so that it parses the tags and actually formats the popup window accordingly.
 
-## Markup
+## Markdown
 
 * **{lb}** = Light Blue Color
 * **{y}** = Yellow Color
