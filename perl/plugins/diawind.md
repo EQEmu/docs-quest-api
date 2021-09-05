@@ -29,7 +29,12 @@
 * **\[&gt;** = Response Text \(Not Visible\) - This is what the player responds with, for example: \[What else do we need to do?&gt;
 * **\[\]** = Response Text \(Visible\) - If a NPC has multiple brackets, it will give the player multiple saylinks to click, if there is just one \[bracket\] inline with the text, the player will respond by clicking 'Yes' on the window
 * **+66+** = Animation number - As long as there is a number between two plus signs together, the NPC will perform that animation
-* **+Salute+** = Animation phrase - This references plugin:oAnim\(\) - If the data between the two ++'s are a string, it will try to parse it with plugin:oAnim
+* **+Salute+** = Animation phrase - This references 
+
+  * plugin::DoAnim
+
+   - If the data between the two ++'s are a string, it will try to parse it with plugin::DoAnim
+
 * **{bullet}** - Equivalent to a bullet such as the one in this list
 * **{in}** - Will indent the text
 * **{linebreak}** - Will create a linebreak
