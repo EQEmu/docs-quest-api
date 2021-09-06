@@ -1,3 +1,7 @@
+---
+description: A custom dialogue handler using the in game popup window
+---
+
 # DiaWind
 
 ## Description
@@ -15,7 +19,7 @@
 * This plugin can also be used as a drop in replacement for quest::say, see video below:
 * This is probably one of the best creations of mine and it took the least amount of time. This system is SUPER easy to use and you don't have to think about doing much when you are creating dialogue.
 * It is feature rich, and allows you to highlight keywords in a window and format it nicely rather than trying to remember a bunch of fancy codes.
-* It takes ALOT of work out of making dialogue stuff work. The below markup can be used anywhere in the first argument of the plugin, it is designed so that it parses the tags and actually formats the popup window accordingly.
+* It takes ALOT of work out of making dialogue stuff work. The below custom markdown can be used anywhere in the first argument of the plugin, it is designed so that it parses the tags and actually formats the popup window accordingly.
 
 ## Markdown
 
@@ -45,18 +49,20 @@
 * **nosound** - No sound affect will play with the window
 * **=Timer=** - If a number is specified between the two ==, it will countdown a timer on the popup window
 
-## Activating this Plugin
-
-* **Place following code in global/global\_player.pl**
-  * **Note you need the plugin::DiaWind\_Process\_Response\(\) if you want the ability to have players automatically respond with messages**
+## Usage
 
 {% tabs %}
 {% tab title="Perl" %}
 ```perl
-sub EVENT_POPUPRESPONSE {
-    #::: plugin::DiaWind response subroutine
-    plugin::DiaWind_Process_Response();
-}
+$client->DialogueWindow("markdown");
+$client->DiaWind("markdown"); // alias
+```
+{% endtab %}
+
+{% tab title="Lua" %}
+```lua
+e.other:DialogueWindow("markdown");
+e.other:DiaWind("markdown"); // alias
 ```
 {% endtab %}
 {% endtabs %}
@@ -70,22 +76,22 @@ The below example makes use of basic color highlighting, animations and response
 ```perl
 sub EVENT_SAY {
     if($text=~/hail/i) {
-        plugin::DiaWind("Ahhh, yes, {gold}$name!~. {lb}Very good work~. You must be [very strong willed] my friend.+bowto+");
+        $client->DiaWind("Ahhh, yes, {gold}$name!~. {lb}Very good work~. You must be [very strong willed] my friend.+bowto+");
     } elsif($text=~/very strong willed/i) {
-        plugin::DiaWind("Ahhh, yes, you see, there is much to be done and {lb}you've only begun~.
+        $client->DiaWind("Ahhh, yes, you see, there is much to be done and {lb}you've only begun~.
         When you are proving yourself in these {y}halls~ I have been troubled to tell you
         to keep in mind you need to see {gold}Falco~. Don't ask questions.[See Falco?>+nodyes+");
     } elsif($text=~/see falco/i) {
-        plugin::DiaWind("I just told you {y}$name~, there are no questions.
+        $client->DiaWind("I just told you {y}$name~, there are no questions.
         {y}Falco~ is a {lb}spirit that exists within this realm but only by fine threads~, he has the information that you need.
         But you must be 'prepared'
  
 		Do you understand the words that are coming out of my mouth {y} $name~? [I am prepared> +nodyes+");
     } elsif($text=~/prepared/i) {
-        plugin::DiaWind("Yes, you must be prepared. I will give you what you need to know.+point+");
+        $client->DiaWind("Yes, you must be prepared. I will give you what you need to know.+point+");
         quest::taskselector(158);
     } else {
-        plugin::DiaWind("I'm sorry $name, but now is not your time +nodyes+");
+        $client->DiaWind("I'm sorry $name, but now is not your time +nodyes+");
     }
 }
 ```
@@ -101,20 +107,20 @@ Below is another example of colors, animations and responses.
 ```perl
 sub EVENT_SAY{
     if($text=~/hail/i){               
-        plugin::DiaWind("Yawwnnn. Your name is {gold}$name~? Hrmm, I just can't {gold}remember anymore...~ {gray}I, I, I, ugh... what was it again...~
+        $client->DiaWind("Yawwnnn. Your name is {gold}$name~? Hrmm, I just can't {gold}remember anymore...~ {gray}I, I, I, ugh... what was it again...~
         Ah, yes strange one.  You wake me from my {lb}slumber~... wait what was it, {lb}who are you?~  I just want to {lb}remember~ [I can help you remember> +31+");
     } elsif($text=~/help you Remember/i){
-        plugin::DiaWind("The dreams I {lb}used to have~, they were {y}wondeakkadiusrful~.  {lb}Dreams~ of {gold}mountains and skeletons~ and err...
+        $client->DiaWind("The dreams I {lb}used to have~, they were {y}wondeakkadiusrful~.  {lb}Dreams~ of {gold}mountains and skeletons~ and err...
         fire I..I...{gray}I just don't remember~.  Have you ventured into the {gold}angels tower and slept in their wonderful beds~?
         They are amazing but it has been ages since I was able to {lb}feel those beds~. 
         The {y}angels~ {r}banished me~ from the {lb} tower~ for my deeds, but alas, that is another {y}story~...
         Wait, I have a {y}wonderful idea~! {y}YES~!!! This idea is {lb}amazing~ and perhaps you would like to {lb}help~ me with it!!! [I will help you> +cheer+");
     } elsif($text=~/I will help/i){
-        plugin::DiaWind("Yes... whoever you are, small being.  {lb}Sleep~ in each of those {lb}wonderful beds~ and fall into the dreams in which I try to remember. 
+        $client->DiaWind("Yes... whoever you are, small being.  {lb}Sleep~ in each of those {lb}wonderful beds~ and fall into the dreams in which I try to remember. 
         Bring me back what you remember of the dreams and help {y}ME~ remember the days when I was able to sleep in those amazing beds, will yeh? 
         So what do you think?  {y}Are you willing to take on this~ {lb}task~? [I will take on this task for you> +shrug+");
     } elsif($text=~/I will take on this task/i){
-        plugin::DiaWind("{y}Perfect~! Start now small one! I am going to try and sleep on this {gray}horrible bed~... +cheer+");
+        $client->DiaWind("{y}Perfect~! Start now small one! I am going to try and sleep on this {gray}horrible bed~... +cheer+");
         quest::taskselector(190);
     }
 }
@@ -130,7 +136,7 @@ A simple use of Mysterious Voice on enter of an NPC Proximity, message disappear
 
 ```perl
 sub EVENT_ENTER {
-	plugin::DiaWind("You can't help but observe that {y}Morell Thule~ is {r}shackled~ by some {g}magic spell~...
+	$client->DiaWind("You can't help but observe that {y}Morell Thule~ is {r}shackled~ by some {g}magic spell~...
 	{gray}Has he lost his mind? He never roams the bottom floors of the castle...~
 	{gray}Morell never comes down to the bottom of the castle...~ =5= mysterious");
 }
