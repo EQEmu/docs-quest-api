@@ -5214,7 +5214,7 @@ quest::wearchange(13, 3);
 
 ```text
 #:: Send a worldwide marquee message in yellow (15), 
-quest::worldwidemarquee(15, 1, 1, 1, 1000, "Hello World!");
+quest::worldwidemarquee(15, 510, 0, 1000, 3000, "Hello World!");
 ```
 
 ## write
