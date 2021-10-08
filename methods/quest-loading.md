@@ -6,7 +6,7 @@
 
 In order of operations, an npc's script will be dictated by the first script that it finds below.  The \[ext\] refers to file extension--either .pl or .lua.  It should be noted that a .lua file takes precedence over a .pl file of the same name. 
 
-These scripts run in a context based on NPCID.  All npcs with the same NPCID can see. modify, and see changes made by the others.  If you need variables that are specific to each instance of an NPCID, data buckets or entity variables can be used.
+These scripts run in a context based on NPCID.  All npcs with the same NPCID can see variables, modify them, and see changes made by the others.  If you need variables that are specific to each instance of an NPCID, data buckets or entity variables can be used.
 
 | Hierarchy | Example |
 | :--- | :--- |
