@@ -6,6 +6,8 @@
 
 In order of operations, an npc's script will be dictated by the first script that it finds below.  The \[ext\] refers to file extension--either .pl or .lua.  It should be noted that a .lua file takes precedence over a .pl file of the same name. 
 
+These scripts run in a context based on NPCID.  All npcs with the same NPCID can see. modify, and see changes made by the others.  If you need variables that are specific to each instance of an NPCID, data buckets or entity variables can be used.
+
 | Hierarchy | Example |
 | :--- | :--- |
 | quests/zoneshortname/id.\[ext\] | quests/qeynos/1173.lua |
@@ -36,6 +38,8 @@ Global scripts were designed to run on top of the scripts mentioned above, meani
 #### NPC
 
 * quests/global/global\_npc.ext
+
+The global\_npc.ext scripts run in a zone wide context.  All npcs in the same zone can see variables, modify them, and see changes made by the others.
 
 ## Item
 
